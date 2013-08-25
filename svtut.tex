@@ -1,0 +1,94 @@
+\documentclass[11pt]{book}              % Book class in 11 points
+\parindent0pt  \parskip10pt             % make block paragraphs
+\raggedright                            % do not right justify
+
+\title{\bf System Verilog by Examples}    % Supply information
+\author{Narendran Kumaragurunathan}              %   for the title page.
+\date{\today}                           %   Use current date. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Document Formatting helpers
+\usepackage{color}
+\usepackage{listings}
+\usepackage{courier}
+\lstset{
+         basicstyle=\footnotesize\ttfamily, % Standardschrift
+         numbers=left,               % Ort der Zeilennummern
+         numberstyle=\tiny,          % Stil der Zeilennummern
+         stepnumber=2,               % Abstand zwischen den Zeilennummern
+         numbersep=5pt,              % Abstand der Nummern zum Text
+         tabsize=2,                  % Groesse von Tabs
+         extendedchars=true,         %
+         breaklines=true,            % Zeilen werden Umgebrochen
+         keywordstyle=\color{red},
+%    		frame=b,         
+ %        keywordstyle=[1]\textbf,    % Stil der Keywords
+ %        keywordstyle=[2]\textbf,    %
+ %        keywordstyle=[3]\textbf,    %
+ %        keywordstyle=[4]\textbf,   \sqrt{\sqrt{}} %
+         stringstyle=\color{white}\ttfamily, % Farbe der String
+         showspaces=false,           % Leerzeichen anzeigen ?
+         showtabs=false,             % Tabs anzeigen ?
+%         xleftmargin=17pt,
+%         framexleftmargin=17pt,
+%         framexrightmargin=5pt,
+         framextopmargin=1pt,
+         framexbottommargin=1pt,
+         %backgroundcolor=\color{lightgray},
+         showstringspaces=false      % Leerzeichen in Strings anzeigen ?        
+ }
+ \lstloadlanguages{% Check Dokumentation for further languages ...
+         C,
+         C++,
+         Verilog
+ }
+%\DeclareCaptionFont{blue}{\color{blue}} 
+
+%\captionsetup[lstlisting]{singlelinecheck=false, labelfont={blue}, textfont={blue}}
+%% \usepackage{caption}
+%% \DeclareCaptionFont{white}{\color{white}}
+%% \DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35,
+%%     0.35,0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+
+%% \captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white,
+%%   singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
+
+%% New env for describing the code
+\newenvironment{tbldesc}{\ttfamily\tiny\selectfont}{\par}
+
+\usepackage{xspace}
+\usepackage{verbatim}
+\usepackage{alltt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Note that book class by default is formatted to be printed back-to-back.
+\begin{document}                        % End of preamble, start of text.
+
+\input{texs/keywords.tex}
+
+\frontmatter                            % only in book class (roman page #s)
+\maketitle                              % Print title page.
+\tableofcontents                        % Print table of contents
+
+\chapter{Preface}
+My interest in \texttt{System Verilog} started during late 2004, when
+the language was being defined. Back then the only reference available
+was the LRM itself as primitive implementations of the language
+started to surface in commercial tools. As I learnt the language, I
+started understanding the language from inside-out which made a big
+difference to the code I was writing. The focus of this book would be
+to teach nuances of \texttt{System Verilog} with examples.
+
+\chapter{Acknowledgements}
+
+\chapter{Introduction}                % Print a "chapter" heading
+\texttt{System Verilog} as a language extends the \texttt{Verilog}
+language and is a superset. Hence \texttt{Verilog} language is in its
+entirety should be supported by \texttt{System Verilog} unless
+explicitly stated.
+
+\mainmatter                             % only in book class (arabic #s)
+
+\input{texs/literal.tex}
+\input{texs/data_types.tex}
+
+\end{document}                          % The required last line

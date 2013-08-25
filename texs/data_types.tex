@@ -1,0 +1,77 @@
+\chapter{Data Types}
+\lsvlog adds multiple integer data types, string, chandle, and class
+data types and enhances the Verilog event type.
+
+\section{Integer data types}
+Integer data types could be either 2-state or 4-state types. Complete
+list of integer data types are listed in Table~\ref{dt!table!idt}. All
+integer data types are integral as they can be converted to or
+assigned from a one-dimensional bit-vector. Other data types such as
+\kwpacked \kw{array}, \kwpacked \kwstruct, \kwpacked \kwunion, \kwenum
+and \kwtime do also exhibit the integral property.
+
+\begin{table}[h]
+\caption{Integer data types}
+\centering
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+Data type & 2/4 state & Default Sign-ness & lvalue & rvalue \\
+\hline \hline
+\kwshortint & 2-state & signed & $-2^{15}$ & $2^{15}-1$ \\
+\hline
+\kwint & 2-state & signed & $-2^{31}$ & $2^{31}-1$ \\
+\hline
+\kwlongint & 2-state & signed & $-2^{63}$ & $2^{63}-1$ \\
+\hline
+\kwbyte & 2-state & signed & $-2^7$ & $2^7-1$ \\
+\hline
+\kwbit & 2-state & unsigned & \multicolumn{2}{l}{user-defined vector size} \\
+\hline
+\kwlogic & 4-state & unsigned & \multicolumn{2}{l}{user-defined vector size} \\
+\hline
+\kwreg & 4-state & unsigned & \multicolumn{2}{l}{user-defined vector size} \\
+\hline
+\kwinteger & 4-state & signed & $-2^{31}$ & $2^{31}-1$ \\
+\hline
+\kwtime & 4-state & unsigned & $0$ & $2^{64}-1$ \\
+\hline
+\end{tabular}
+\label{dt!table!idt}
+\end{table}
+
+Every bit of a 2-state data-type could hold the value '0' or '1',
+whereous each bit of a 4-state data-type could hold values '0', '1',
+'X' or 'Z'.
+
+All integer data types could be either \kwsigned or \kwunsigned. It becomes
+important to understand sign-ness to understand the boundaries of each
+data-type. When an integer data type is declared to be \kwunsigned, it
+would have range from $0$ to $2^n-1$, where $n$ is the number of bits
+in the type.
+
+\section{Floating-point data types}
+\lvlog already defines \kwreal, which is equivalent to \lc's
+\kw{double} data-type. \lsvlog defines \kwshortreal data-type, that is
+equivalent to \lc's \kw{float}. In general implementations of \lc
+compilers, \kw{float} has 7 decimal precision, whereous \kw{double}
+has a precision of 15.
+
+\section{void}
+The \kwvoid data type represents nonexistent data. This type can be
+specified as the return type of functions to indicate no return
+value. This type can also be used for members of tagged unions.
+
+\section{chandle}
+The \kwchandle data type represents storage for pointers. Its only
+application is to store DPI returned pointers. \lsvlog can neither
+create nor destroy \lc pointers. \kwchandle have initial value as
+\kwnull. \kwchandle could be used in boolean equations to test for
+equality \texttt{==, !=, ===, !==}. In boolean context, a \kwchandle
+evaluates to 0 if \kwnull or to 1 otherwise.
+
+\section{string}
+\lsvlog's \kwstring are dynamic as their length may vary during
+simulation. They could be assigned from a string literal. \kwstring
+data-type allows indexing single or a group of characters. Unlike \lc,
+\lsvlog's \kwstring doesn't contain the special character
+'\textbackslash{}0'.

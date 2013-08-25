@@ -1,0 +1,118 @@
+\chapter{Literals}
+Literals are fixed values in source code and normally does not
+include spaces. \lsvlog language adds few literals
+time values, literal array values, literal structures, and
+enhancements to literal strings.
+
+\section{Integer and Logic}
+SV introduces unsized single bit state values \texttt{'0, '1, 'z, 'Z,
+  'x, 'X}. Important feature to notice is that there is no format
+specifier in the literal and it is devoid of width specification as
+well. When assigned to a multibit data-type, they automatically size
+to the vector's size. The feature aids portable code.
+\begin{lstlisting}[label=lst!literal!logic,caption=Unsized literal usage]
+logic [47:0] val48;
+
+initial begin
+  val48 = 'x;
+  val48 = 48'hxxxxxxxxxxxx;
+  val48 = 48'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx;
+end
+\end{lstlisting}
+Listing~\ref{lst!literal!logic} shows three different ways of
+assigning a 48bit logic vector with unknown state value `x'. It is
+very obvious that the unsized single bit format is more readable and
+is not error prone.
+
+\section{Time}
+SV introduces accurate time specifications. Earlier method of
+specification in \lvlog was prone to errors due to compiler
+switches such as \kw{-override\_timescale} and the ordering of
+\kw{`timescale} directives. Accurate time specification literal is a
+real-value followed by time unit, without a space. Time unit is one of
+\texttt{fs ps ns us ms s}. Examples of valid specifications are
+\texttt{0.1ns, 1s, 3.141us}.
+
+\section{Array}
+Array literals are syntactically similar to C initializers, but with
+the replicate operator ( {{}} ) allowed.  The nesting of braces must
+follow the number of dimensions, unlike in C. However, replicate
+operators can be nested.
+
+\begin{lstlisting}[label=lst!literal!array, caption=Array Literal
+    examples]
+int n[1:2][1:3] = '{'{0,1,2},'{3{4}}};
+/* becomes '{'{0,1,2}, '{4, 4, 4}} */
+
+int n[1:2][1:6] = '{2{'{3{4, 5}}}};
+/* becomes '{'{4,5,4,5,4,5},'{4,5,4,5,4,5}} */
+\end{lstlisting}
+
+Array literals can also use their index or type as a key and use a
+default key value. Both lines of Listing~\ref{lst!literal!arr2} are
+equivalent.
+\begin{lstlisting}[label=lst!literal!arr2, caption=Array Literal with
+    default value]
+int b[0:3] = '{1:1, default:0};
+int b[0:3] = '{1:1, int:0};
+/* becomes [0, 1, 0, 0] */
+\end{lstlisting}
+
+\section{Structure}
+A structure literal must have a type, which may be either explicitly
+indicated with a prefix or implicitly indicated by an assignment-like
+context. Nested braces should reflect the structure as in
+Listing~\ref{lst!literal!struct}. Unordered values as in line 4, would
+be an error.
+
+\begin{table}
+\begin{tabular}{p{0.6\textwidth} p{0.3\textwidth}}
+\begin{lstlisting}[label=lst!literal!struct, caption=Structure Literals]
+struct {int a; shortreal b;} ab, ab2[2];
+ab = '{0, 0.0};
+ab2 = '{'{1, 1.1}, '{2, 2.2}};
+ab2 = '{1, 1.1, 2, 2.2};
+ab = '{int:1, shortreal:1.1};
+ab = '{default:0};
+
+struct {int a, b[4];} ab [2][3] = '{2{'{3{a,'{2{b,c}}}}}};
+\end{lstlisting}
+&
+\begin{tbldesc}
+\begin{verbatim}
+
+
+Line 4: Error: need to brace array elements
+Line 5: becomes '{1, 1.1}
+Line 6: becomes '{0, 0.0}
+Line 8:
+ '{2{ '{3{ a, '{b, c, b, c} }} }}
+ '{2{ '{a, '{b,c,b,c}}, '{a, '{b,c,b,c}},
+                      '{a, '{b,c,b,c}} }}
+ '{ '{ '{a, '{b,c,b,c}}, '{a, '{b,c,b,c}},
+                      '{a, '{b,c,b,c}} },
+    '{ '{a, '{b,c,b,c}}, '{a, '{b,c,b,c}},
+                      '{a, '{b,c,b,c}} } }
+\end{verbatim}
+\end{tbldesc}
+\end{tabular}
+\end{table}
+
+\section{String}
+\lsvlog adds few special characters to string literals such as
+\texttt{\textbackslash{}a, \textbackslash{}v, \textbackslash{}f,
+  \textbackslash{}x}. These special characters are intrepretted inside
+a string literal enclosed withing "~". They have the same definition
+as C quoted strings such as ``bell'', ``vertical feed'', ``form feed''
+and ``hex number''. \texttt{\textbackslash{}x} should be followed by
+hexadecimal value corresponding to the desired character.
+
+\begin{lstlisting}[label=lst!literal!string, caption=String Literal
+    Examples]
+byte c3 [0:7] = "Hello World\n" ;
+\end{lstlisting}
+
+A string literal can be assigned to an unpacked array of bytes. If the
+size differs, it is left justified. In
+Listing~\ref{lst!literal!string}, \texttt{c3[0]} contains character
+`H' and \texttt{c3[7]} contains character `r'.
