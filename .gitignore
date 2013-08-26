@@ -29,3 +29,6 @@
 *.vrb
 *.xdy
 *.tdo
+*.css
+*.html
+*~
