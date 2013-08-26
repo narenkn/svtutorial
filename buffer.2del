@@ -1,0 +1,16 @@
+; This file contains common code used across documents for easier access
+
+\begin{table}
+\begin{tabular}{p{0.6\textwidth} p{0.3\textwidth}}
+\begin{lstlisting}[label=lst!literal!struct, caption=Structure Literals]
+
+\end{lstlisting}
+&
+\begin{tbldesc}
+\begin{verbatim}
+
+
+\end{verbatim}
+\end{tbldesc}
+\end{tabular}
+\end{table}
