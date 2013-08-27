@@ -1,6 +1,6 @@
 TEX           = pdflatex
 HTMLTEX       = htlatex
-HTMLTEX_FLAGS =  "html, 2, next, NoFonts" "" -dohtml/
+HTMLTEX_FLAGS =  "html, 2, next" "" -dohtml/
 CUSTOMCSS     = ohtml/custom.css
 AUXFILES      = $(wildcard *.aux *.tmp *.toc *.xref *.lg *.idv *.dvi *.4tc *.4ct *.out *.log)
 SOURCES       = $(wildcard *.tex)
@@ -25,4 +25,5 @@ rmaux:
 	$(TEX) $<
 
 %.html: %.tex $(CUSTOMCSS)
-	$(HTMLTEX) $< $(HTMLTEX_FLAGS) && cat $(CUSTOMCSS) >> ohtml/$(<:.tex=.css)
+	-rm -f ohtml/$(<:.tex=.css)
+	$(HTMLTEX) $< $(HTMLTEX_FLAGS) && cat $(<:.tex=.css) $(CUSTOMCSS) > ohtml/$(<:.tex=.css)

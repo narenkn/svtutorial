@@ -77,3 +77,94 @@ simulation. They could be assigned from a string literal. \kwstring
 data-type allows indexing single or a group of characters. Unlike \lc,
 \lsvlog's \kwstring doesn't contain the special character
 '\textbackslash{}0'.
+
+\begin{table}
+\begin{tabular}{p{0.6\textwidth} p{0.3\textwidth}}
+\begin{lstlisting}[label=dt!literal!struct, caption=Structure Literals]
+string v1;
+string v2 = ``abcdef\n'';
+string v3 = ``ghijkl\0'';
+string s1 = "hello";
+bit [11:0] b = 12'ha41;
+string s2 = string'(b);
+// sets s1 to "hello"
+// sets s2 to 16'h0a41
+typedef reg [15:0] r_t;
+r_t r;
+integer i = 1;
+string b = "";
+string a = {"Hi", b};
+r
+b
+b
+b
+a
+r
+a
+a
+a
+r
+=
+=
+=
+=
+=
+=
+=
+=
+=
+=
+r_t'(a);
+string'(r);
+"Hi";
+{5{"Hi"}};
+{i{"Hi"}};
+{i{"Hi"}};
+{i{b}};
+{a,b};
+{"Hi",b};
+{"H",""};
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+OK
+OK
+OK
+OK
+OK (non constant replication)
+invalid (non constant replication)
+OK
+OK
+OK
+yields "H\0". "" is converted to 8'b0
+b = {"H",""};
+a[0] = "h";
+a[0] = b;
+a[1] = "\0";
+//
+//
+//
+//
+IEEE
+Std 1800-2005
+yields "H". "" is the empty string
+OK, same as a[0] = "cough"
+invalid, requires a cast
+ignored, a is unchanged
+\end{lstlisting}
+&
+\begin{tbldesc}
+\begin{verbatim}
+
+
+\end{verbatim}
+\end{tbldesc}
+\end{tabular}
+\end{table}

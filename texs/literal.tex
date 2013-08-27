@@ -123,7 +123,7 @@ Line 8:
 \lsvlog adds few special characters to string literals such as
 \texttt{\textbackslash{}a, \textbackslash{}v, \textbackslash{}f,
   \textbackslash{}x}. These special characters are intrepretted inside
-a string literal enclosed withing "~". They have the same definition
+a string literal enclosed within ``''. They have the same definition
 as C quoted strings such as ``bell'', ``vertical feed'', ``form feed''
 and ``hex number''. \texttt{\textbackslash{}x} should be followed by
 hexadecimal value corresponding to the desired character.
@@ -134,6 +134,8 @@ hexadecimal value corresponding to the desired character.
     Examples]
 byte c3 [0:7] = "Hello World\n";
 byte c4 [7:0] = "Hello World\n";
+bit [10:0] a = "\x41";
+bit [1:4][7:0] h = "hello";
 \end{lstlisting}
 &
 \begin{tbldesc}
@@ -142,6 +144,8 @@ byte c4 [7:0] = "Hello World\n";
 
 Line 1: c3[0] = "H", c3[7] = "o"
 Line 2: c4[0] = "H", c4[7] = "H"
+Line 3: assigns to a 'b000_0100_0001
+Line 4: assigns to h "ello"
 \end{verbatim}
 \end{tbldesc}
 \end{tabular}
