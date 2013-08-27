@@ -21,5 +21,9 @@ body.children.each { |child|
   end
 }
 
+if (! first_div_seen)
+  body['class'] = 'book-page';
+end
+
 html = doc.to_html
 puts html
