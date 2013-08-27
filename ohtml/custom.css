@@ -19,8 +19,20 @@ body {
     line-height: 20px;
     margin:10em;
     max-width:42em;
-    background:#fefefe;
+    background:#7e7e7e;
     color:#333;
+}
+
+.crosslinks {
+    text-align: center;
+    font-size: 24px;
+    padding:2em;
+    background:#ffebcd;
+}
+
+.book-page {
+    padding:2em;
+    background:#c2dfff;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -58,8 +70,8 @@ h6 {
 hr {
     height: 0.2em;
     border: 0;
-    color: #CCCCCC;
-    background-color: #CCCCCC;
+    color:#0000A0;
+    background:#0000A0;
 }
 
 p, blockquote, ul, ol, dl, li, table, pre {
