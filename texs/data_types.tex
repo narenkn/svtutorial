@@ -78,92 +78,69 @@ data-type allows indexing single or a group of characters. Unlike \lc,
 \lsvlog's \kwstring doesn't contain the special character
 '\textbackslash{}0'.
 
+\kwstring data type can be operated on by the following operators
+
 \begin{table}
 \begin{tabular}{p{0.6\textwidth} p{0.3\textwidth}}
 \begin{lstlisting}[label=dt!literal!struct, caption=Structure Literals]
-string v1;
-string v2 = ``abcdef\n'';
-string v3 = ``ghijkl\0'';
-string s1 = "hello";
+string s1;
+string s2 = "abcdef\n";
+string s3 = "ghijkl\0";
+string s4 = "hello";
 bit [11:0] b = 12'ha41;
 string s2 = string'(b);
-// sets s1 to "hello"
-// sets s2 to 16'h0a41
+
 typedef reg [15:0] r_t;
 r_t r;
 integer i = 1;
-string b = "";
-string a = {"Hi", b};
-r
-b
-b
-b
-a
-r
-a
-a
-a
-r
-=
-=
-=
-=
-=
-=
-=
-=
-=
-=
-r_t'(a);
-string'(r);
-"Hi";
-{5{"Hi"}};
-{i{"Hi"}};
-{i{"Hi"}};
-{i{b}};
-{a,b};
-{"Hi",b};
-{"H",""};
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-OK
-OK
-OK
-OK
-OK (non constant replication)
-invalid (non constant replication)
-OK
-OK
-OK
-yields "H\0". "" is converted to 8'b0
+string s5 = "";
+string s6 = {"Hi", s5};
+
+r = r_t'(s6);
+s5 = string'(r);
+s5 = "Hi";
+s5 = {5{"Hi"}};
+s6 = {i{"Hi"}};
+r = {i{"Hi"}};
+s6 = {i{s5}};
+s6 = {s6,s5};
+s6 = {"Hi",s5};
+r = {"H",""};
 b = {"H",""};
-a[0] = "h";
-a[0] = b;
-a[1] = "\0";
-//
-//
-//
-//
-IEEE
-Std 1800-2005
-yields "H". "" is the empty string
-OK, same as a[0] = "cough"
-invalid, requires a cast
-ignored, a is unchanged
+s2[0] = "h";
+s2[0] = "cough";
+s2[1] = "\0";
 \end{lstlisting}
 &
 \begin{tbldesc}
 \begin{verbatim}
 
 
+Line 1: initialised to ""
+Line 2: OK
+Line 3: '\0' is removed from string
+Line 4: OK
+Line 5: OK
+Line 6: converted to 16'h0a41
+  Note the typecasting operator
+
+Line 9: reg init with 'x
+Line 11: explicit string init to ""
+Line 12: OK value "Hi"
+Line 14: OK value 16'h4869
+Line 15: OK value "Hi"
+Line 16: OK value "Hi"
+Line 17: OK value "HiHiHiHiHi"
+Line 18: OK (non constant replication)
+Line 19: Invalid (non constant replication)
+Line 20: OK value "HiHiHiHiHiHi"
+Line 21: OK
+Line 22: OK value "HiHiHiHiHiHiHi"
+Line 23: 16'4800 ("" is converted to 8'b0)
+Line 24: OK value 12'h048
+Line 25: OK
+Line 26: OK, same as Line 25
+Line 27: s2[1] unchanged, "\0" is not assigned
 \end{verbatim}
 \end{tbldesc}
 \end{tabular}
