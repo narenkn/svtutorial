@@ -22,7 +22,17 @@ body.children.each { |child|
 }
 
 if (! first_div_seen)
-  body['class'] = 'book-page';
+  body.children.each { |child|
+#    puts child.name
+#    if (! first_div_seen)
+#      first_div_seen = ("div" == child.name)
+#      child.add_previous_sibling(doc_div)
+#      doc_div << child
+#    else
+      doc_div << child if ('book-page' != child['class'])
+#    end
+  }
+#  body << doc_div
 end
 
 html = doc.to_html

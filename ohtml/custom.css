@@ -18,7 +18,7 @@ body {
     font-weight:300;    
     line-height: 20px;
     margin:10em;
-    max-width:42em;
+    max-width:60em;
     background:#7e7e7e;
     color:#333;
 }
@@ -30,7 +30,12 @@ body {
     background:#ffebcd;
 }
 
-.book-page {
+.next {
+    padding:1em;
+    font-size: 200%;
+}
+
+.book-page, .maketitle, .tableofcontents {
     padding:2em;
     background:#c2dfff;
 }
