@@ -1,0 +1,295 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>1 Literals</title>
+<link rel="stylesheet" type="text/css" href="svtut.css">
+</head>
+<body>
+<!--l. 1--><div class="crosslinks" id="nav"><ul id="navigation">
+<li><a href="svtutch5.html">Next Chapter</a></li>
+<li><a href="svtutch3.html">Previous Chapter</a></li>
+<li><a href="#tailsvtutch4.html">End of Page</a></li>
+<li><a href="svtut.html#svtutch4.html">Title Page</a></li>
+</ul></div>
+<div class="book-page">
+<h2 class="chapterHead">
+<span class="titlemark">Chapter 1</span><br><a id="x6-50001"></a>Literals</h2> Literals are fixed values in source code and normally does not
+include spaces. <span class="pcrb7t-x-x-109">System Verilog</span>language adds few literals including
+time literal, array literal, structure literal, and enhancements to string
+literal.
+<h3 class="sectionHead">
+<span class="titlemark">1.1   </span> <a id="x6-60001.1"></a>Integer and Logic</h3>
+<!--l. 8--><p class="noindent">SV introduces unsized single bit state values <span class="pcrr7t-x-x-109">'0, '1, 'z, 'Z, 'x, 'X</span>.
+Important feature to notice is that there is no format specifier in the literal and it
+is devoid of width specification as well. When assigned to a multibit data-type,
+they automatically size to the vector&#8217;s size. The feature aids portable code.
+<!--l. 13-->
+<a id="x6-6001r1"></a>
+<a id="x6-6002"></a>
+<br></p>
+<div class="caption">
+<span class="id">Listing 1.1:
+    </span><span class="content">Unsized
+    literal
+    usage</span>
+</div>
+<!--tex4ht:label?: x6-6001r1.1 --><div class="lstlisting" id="listing-1">
+<span class="label"><a id="x6-6003r1"></a><span class="cmr-6">1</span></span><span class="pcrr7t-x-x-90">logic</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">[47:0]</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">val48</span><span class="pcrr7t-x-x-90">;</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x6-6004r2"></a></span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x6-6005r3"></a><span class="cmr-6">3</span></span><span class="pcrr7t-x-x-90">initial</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">begin</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x6-6006r4"></a></span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">val48</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">'</span><span class="pcrr7t-x-x-90">x</span><span class="pcrr7t-x-x-90">;</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x6-6007r5"></a><span class="cmr-6">5</span></span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">val48</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">48'</span><span class="pcrr7t-x-x-90">hxxxxxxxxxxxx</span><span class="pcrr7t-x-x-90">;</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x6-6008r6"></a></span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">val48</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">48'</span><span class="pcrr7t-x-x-90">bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</span><span class="pcrr7t-x-x-90">;</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x6-6009r7"></a><span class="cmr-6">7</span></span><span class="pcrr7t-x-x-90">end</span>
+</div>
+<!--l. 22--><p class="noindent">Listing <a href="#x6-6001r1">1.1<!--tex4ht:ref: lst!literal!logic --></a> shows three different ways of assigning a 48bit logic vector with
+unknown state value &#8216;x&#8217;. It is very obvious that the unsized single bit format is
+more readable and is not error prone.
+<!--l. 27--></p>
+<p class="noindent">
+</p>
+<h3 class="sectionHead">
+<span class="titlemark">1.2   </span> <a id="x6-70001.2"></a>Time</h3>
+<!--l. 28--><p class="noindent">SV introduces accurate time specifications. Earlier method of specification
+in <span class="pcrb7t-x-x-109">Verilog</span>was prone to errors due to compiler switches such as
+                                                                     
+
+                                                                     
+<span class="pcrb7t-x-x-109">-override</span><span class="pcrb7t-x-x-109">_timescale </span>and the ordering of <span class="pcrb7t-x-x-109">&#8216;timescale </span>directives. Accurate
+time specification literal is a real-value followed by time unit, without a space.
+Time unit is one of <span class="pcrr7t-x-x-109">fs ps ns us ms s</span>. Examples of valid specifications are
+<span class="pcrr7t-x-x-109">0.1ns, 1s, 3.141us</span>.
+<!--l. 36--></p>
+<p class="noindent">
+</p>
+<h3 class="sectionHead">
+<span class="titlemark">1.3   </span> <a id="x6-80001.3"></a>Array</h3>
+<!--l. 37--><p class="noindent">Array literals are syntactically similar to C initializers, but with the
+replicate operator ( <span class="cmsy-10x-x-109">{{</span> <span class="cmsy-10x-x-109">}} </span>) allowed. The nesting of braces must follow the
+number of dimensions, unlike in C. However, replicate operators can be
+nested.
+</p>
+<div class="table">
+                                                                     
+
+                                                                     
+<!--l. 43--><p class="noindent"><a id="x6-8001r2"></a></p>
+<hr class="float">
+<div class="float">
+                                                                     
+
+                                                                     
+<div class="tabular"> <table id="TBL-2" class="tabular" cellspacing="0" cellpadding="0">
+<colgroup id="TBL-2-1g">
+<col id="TBL-2-1">
+<col id="TBL-2-2">
+</colgroup>
+<tr style="vertical-align:baseline;" id="TBL-2-1-">
+<td style="white-space:wrap; text-align:left;" id="TBL-2-1-1" class="td11">
+<!--l. 44-->
+<a id="x6-8002"></a>
+<br><div class="caption">
+<span class="id">Listing 1.2:
+     </span><span class="content">Array
+     Literal
+     examples</span>
+</div>
+<!--tex4ht:label?: x6-8001r1.3 --><div class="lstlisting" id="listing-2">
+<span class="label"><a id="x6-8003r1"></a><span class="cmr-6">1</span></span><span class="pcrr7t-x-x-90">int</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">n</span><span class="pcrr7t-x-x-90">[1:2][1:3]</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">'{'{0,1,2},'{3{4}}};</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x6-8004r2"></a></span><span class="pcrr7t-x-x-90">int</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">n</span><span class="pcrr7t-x-x-90">[1:2][1:6]</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">'{2{'{3{4,</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">5}}}};</span>
+</div>
+<!--l. 49--><p class="noindent">                                        </p>
+</td>
+<td style="white-space:wrap; text-align:left;" id="TBL-2-1-2" class="td11">
+<div class="verbatim" id="verbatim-1">
+ <br>
+ <br>Line 1: becomes '{'{0,1,2}, '{4, 4, 4}}
+ <br>Line 2: becomes '{'{4,5,4,5,4,5},'{4,5,4,5,4,5}}
+</div>
+<!--l. 56--><p class="nopar">                              </p>
+</td>
+</tr>
+</table>
+</div>
+                                                                     
+
+                                                                     
+</div>
+<hr class="endfloat">
+</div>
+<!--l. 61--><p class="noindent">Array literals can also use their index or type as a key and use a default key
+value. Both lines of Listing <a href="#x6-8005r3">1.3<!--tex4ht:ref: lst!literal!arr2 --></a> are equivalent. </p>
+<div class="table">
+                                                                     
+
+                                                                     
+<!--l. 65--><p class="noindent"><a id="x6-8005r3"></a></p>
+<hr class="float">
+<div class="float">
+                                                                     
+
+                                                                     
+<div class="tabular"> <table id="TBL-3" class="tabular" cellspacing="0" cellpadding="0">
+<colgroup id="TBL-3-1g">
+<col id="TBL-3-1">
+<col id="TBL-3-2">
+</colgroup>
+<tr style="vertical-align:baseline;" id="TBL-3-1-">
+<td style="white-space:wrap; text-align:left;" id="TBL-3-1-1" class="td11">
+<!--l. 66-->
+<a id="x6-8006"></a>
+<br><div class="caption">
+<span class="id">Listing 1.3:
+     </span><span class="content">Array
+     Literal
+     with
+     default
+     value</span>
+</div>
+<!--tex4ht:label?: x6-8005r1.3 --><div class="lstlisting" id="listing-3">
+<span class="label"><a id="x6-8007r1"></a></span><span class="pcrr7t-x-x-90">int</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">b</span><span class="pcrr7t-x-x-90">[0:3]</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">'{1:1,</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">default</span><span class="pcrr7t-x-x-90">:0};</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x6-8008r2"></a><span class="cmr-6">2</span></span><span class="pcrr7t-x-x-90">int</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">b</span><span class="pcrr7t-x-x-90">[0:3]</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">'{1:1,</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">int</span><span class="pcrr7t-x-x-90">:0};</span>
+</div>
+<!--l. 71--><p class="noindent">                                        </p>
+</td>
+<td style="white-space:wrap; text-align:left;" id="TBL-3-1-2" class="td11">
+<div class="verbatim" id="verbatim-2">
+ <br>
+ <br>Line 1, 2: both becomes [0, 1, 0, 0]
+</div>
+<!--l. 77--><p class="nopar">                              </p>
+</td>
+</tr>
+</table>
+</div>
+                                                                     
+
+                                                                     
+</div>
+<hr class="endfloat">
+</div>
+<h3 class="sectionHead">
+<span class="titlemark">1.4   </span> <a id="x6-90001.4"></a>Structure</h3>
+<!--l. 83--><p class="noindent">A structure literal must have a type, which may be either explicitly indicated
+with a prefix or implicitly indicated by an assignment-like context. Nested braces
+should reflect the structure as in Listing <a href="#x6-9001r4">1.4<!--tex4ht:ref: lst!literal!struct --></a>. Unordered values as in line 4, would
+be an error.
+</p>
+<div class="table">
+                                                                     
+
+                                                                     
+<!--l. 90--><p class="noindent"><a id="x6-9001r4"></a></p>
+<hr class="float">
+<div class="float">
+                                                                     
+
+                                                                     
+<div class="tabular"> <table id="TBL-4" class="tabular" cellspacing="0" cellpadding="0">
+<colgroup id="TBL-4-1g">
+<col id="TBL-4-1">
+<col id="TBL-4-2">
+</colgroup>
+<tr style="vertical-align:baseline;" id="TBL-4-1-">
+<td style="white-space:wrap; text-align:left;" id="TBL-4-1-1" class="td11">
+<!--l. 91-->
+<a id="x6-9002"></a>
+<br><div class="caption">
+<span class="id">Listing 1.4:
+                             </span><span class="content">Structure
+                             Literals</span>
+</div>
+<!--tex4ht:label?: x6-9001r1.4 --><div class="lstlisting" id="listing-4">
+<span class="label"><a id="x6-9003r1"></a></span><span class="pcrr7t-x-x-90">struct</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">{</span><span class="pcrr7t-x-x-90">int</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">a</span><span class="pcrr7t-x-x-90">;</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">shortreal</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">b</span><span class="pcrr7t-x-x-90">;}</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">ab</span><span class="pcrr7t-x-x-90">,</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">ab2</span><span class="pcrr7t-x-x-90">[2];</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x6-9004r2"></a><span class="cmr-6">2</span></span><span class="pcrr7t-x-x-90">ab</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">'{0,</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">0.0};</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x6-9005r3"></a></span><span class="pcrr7t-x-x-90">ab2</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">'{'{1,</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">1.1},</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">'{2,</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">2.2}};</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x6-9006r4"></a><span class="cmr-6">4</span></span><span class="pcrr7t-x-x-90">ab2</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">'{1,</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">1.1,</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">2,</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">2.2};</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x6-9007r5"></a></span><span class="pcrr7t-x-x-90">ab</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">'{</span><span class="pcrr7t-x-x-90">int</span><span class="pcrr7t-x-x-90">:1,</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">shortreal</span><span class="pcrr7t-x-x-90">:1.1};</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x6-9008r6"></a><span class="cmr-6">6</span></span><span class="pcrr7t-x-x-90">ab</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">'{</span><span class="pcrr7t-x-x-90">default</span><span class="pcrr7t-x-x-90">:0};</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x6-9009r7"></a></span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x6-9010r8"></a><span class="cmr-6">8</span></span><span class="pcrr7t-x-x-90">struct</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">{</span><span class="pcrr7t-x-x-90">int</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">a</span><span class="pcrr7t-x-x-90">,</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">b</span><span class="pcrr7t-x-x-90">[4];}</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">ab</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">[2][3]</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x6-9011r9"></a></span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">'{2{'{3{</span><span class="pcrr7t-x-x-90">a</span><span class="pcrr7t-x-x-90">,'{2{</span><span class="pcrr7t-x-x-90">b</span><span class="pcrr7t-x-x-90">,</span><span class="pcrr7t-x-x-90">c</span><span class="pcrr7t-x-x-90">}}}}}};</span>
+</div>
+<!--l. 102--><p class="noindent">                                        </p>
+</td>
+<td style="white-space:wrap; text-align:left;" id="TBL-4-1-2" class="td11">
+<div class="verbatim" id="verbatim-3">
+ <br>
+ <br>Line 4: Error: need to brace array elements
+ <br>Line 5: becomes '{1, 1.1}
+ <br>Line 6: becomes '{0, 0.0}
+ <br>Line 8:
+ <br> '{2{ '{3{ a, '{b, c, b, c} }} }}
+ <br> '{2{ '{a, '{b,c,b,c}}, '{a, '{b,c,b,c}},
+ <br>                      '{a, '{b,c,b,c}} }}
+ <br> '{ '{ '{a, '{b,c,b,c}}, '{a, '{b,c,b,c}},
+ <br>                      '{a, '{b,c,b,c}} },
+ <br>    '{ '{a, '{b,c,b,c}}, '{a, '{b,c,b,c}},
+ <br>                      '{a, '{b,c,b,c}} } }
+</div>
+<!--l. 118--><p class="nopar">                              </p>
+</td>
+</tr>
+</table>
+</div>
+                                                                     
+
+                                                                     
+</div>
+<hr class="endfloat">
+</div>
+<h3 class="sectionHead">
+<span class="titlemark">1.5   </span> <a id="x6-100001.5"></a>String</h3>
+<!--l. 124--><p class="noindent"><span class="pcrb7t-x-x-109">System Verilog</span>adds few special characters to string literals such as <span class="cmsy-10x-x-109">\</span><span class="pcrr7t-x-x-109">a,</span>
+<span class="cmsy-10x-x-109">\</span><span class="pcrr7t-x-x-109">v, </span><span class="cmsy-10x-x-109">\</span><span class="pcrr7t-x-x-109">f, </span><span class="cmsy-10x-x-109">\</span><span class="pcrr7t-x-x-109">x</span>. These special characters are intrepretted inside a string
+literal enclosed within &#8220;&#8221;. They have the same definition as C quoted
+strings such as &#8220;bell&#8221;, &#8220;vertical feed&#8221;, &#8220;form feed&#8221; and &#8220;hex number&#8221;. <span class="cmsy-10x-x-109">\</span><span class="pcrr7t-x-x-109">x</span>
+should be followed by hexadecimal value corresponding to the desired
+character.
+</p>
+<div class="table">
+                                                                     
+
+                                                                     
+<!--l. 133--><p class="noindent"><a id="x6-10001r5"></a></p>
+<hr class="float">
+<div class="float">
+                                                                     
+
+                                                                     
+<div class="tabular"> <table id="TBL-5" class="tabular" cellspacing="0" cellpadding="0">
+<colgroup id="TBL-5-1g">
+<col id="TBL-5-1">
+<col id="TBL-5-2">
+</colgroup>
+<tr style="vertical-align:baseline;" id="TBL-5-1-">
+<td style="white-space:wrap; text-align:left;" id="TBL-5-1-1" class="td11">
+<!--l. 134-->
+<a id="x6-10002"></a>
+<br><div class="caption">
+<span class="id">Listing 1.5:
+     </span><span class="content">String
+     Literal
+     Examples</span>
+</div>
+<!--tex4ht:label?: x6-10001r1.5 --><div class="lstlisting" id="listing-5">
+<span class="label"><a id="x6-10003r1"></a><span class="cmr-6">1</span></span><span class="pcrr7t-x-x-90">byte</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">c3</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">[0:7]</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">Hello</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">World</span><span class="pcrr7t-x-x-90">\</span><span class="pcrr7t-x-x-90">n</span><span class="pcrr7t-x-x-90">";</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x6-10004r2"></a></span><span class="pcrr7t-x-x-90">byte</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">c4</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">[7:0]</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">Hello</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">World</span><span class="pcrr7t-x-x-90">\</span><span class="pcrr7t-x-x-90">n</span><span class="pcrr7t-x-x-90">";</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x6-10005r3"></a><span class="cmr-6">3</span></span><span class="pcrr7t-x-x-90">bit</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">[10:0]</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">a</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">"\</span><span class="pcrr7t-x-x-90">x41</span><span class="pcrr7t-x-x-90">";</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x6-10006r4"></a></span><span class="pcrr7t-x-x-90">bit</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">[1:4][7:0]</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">h</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">hello</span><span class="pcrr7t-x-x-90">";</span>
+</div>
+<!--l. 141--><p class="noindent">                                        </p>
+</td>
+<td style="white-space:wrap; text-align:left;" id="TBL-5-1-2" class="td11">
+<div class="verbatim" id="verbatim-4">
+ <br>
+ <br>Line 1: c3[0] = "H", c3[7] = "o"
+ <br>Line 2: c4[0] = "H", c4[7] = "H"
+ <br>Line 3: assigns to a 'b000_0100_0001
+ <br>Line 4: assigns to h "ello"
+</div>
+<!--l. 150--><p class="nopar">                              </p>
+</td>
+</tr>
+</table>
+</div>
+                                                                     
+
+                                                                     
+</div>
+<hr class="endfloat">
+</div>
+<!--l. 155--><p class="noindent">A string literal can be assigned to an unpacked array of bytes. If the size differs,
+it is left justified. In Listing <a href="#x6-10001r5">1.5<!--tex4ht:ref: lst!literal!string --></a>, <span class="pcrr7t-x-x-109">c3[0] </span>contains character &#8216;H&#8217; and <span class="pcrr7t-x-x-109">c3[7]</span>
+contains ASCII value of character &#8216;o&#8217;.
+                                                                     
+
+                                                                     
+<!--l. 1--></p>
+</div>
+<!--l. 1--><p class="noindent"><a id="tailsvtutch4.html"></a>  
+</p>
+</body>
+</html>
