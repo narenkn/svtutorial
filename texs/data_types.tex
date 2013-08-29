@@ -72,16 +72,45 @@ evaluates to 0 if \kwnull or to 1 otherwise. It should be obvious that
 not as ports.
 
 \section{string}
-\lsvlog's \kwstring are dynamic as their length may vary during
-simulation. They could be assigned from a string literal. \kwstring
-data-type allows indexing single or a group of characters. Unlike \lc,
-\lsvlog's \kwstring doesn't contain the special character
-'\textbackslash{}0'.
+\lsvlog's \kwstring is a built-in data-type. It is dynamic as its
+length may vary during simulation. It could be assigned from a
+string literal. \kwstring data-type allows indexing single or a group
+of characters. Unlike \lc, \lsvlog's \kwstring doesn't contain the
+special character '\textbackslash{}0'.
 
-\kwstring data type can be operated on by the following operators
+Special string operators exists for \kwstring data type. These
+operators are invoked only if either of operands is a \kwstring data
+type. Otherwise, when both operands are string literals, the behaviour
+would be comparable with Verilog, where integer operators are invoked
+in most cases. If the result of the operator is used in another
+expression involving string types, it is implicitly converted to the
+string type.
+\begin{description}
+\item{{\bf Equality operator ==}} \hfill \\ Checks whether the two
+  strings are equal. Result is 1 if they are equal and 0 if they are
+  not.
+\item{{\bf Inequality operator !=}} \hfill \\ Logical negation of
+  Equality operator.
+\item{{\bf Comparison operators $<, >, <=, >=$}} \hfill \\ Relational
+  operators return 1 if the corresponding condition is true using the
+  lexicographical ordering of the two strings under consideration.
+\item{{\bf Concatenation \{~\}}} \hfill \\ The string concatenation
+  operator evaluates each constituent expressions to string before
+  concatenating it. The result is of type string.
+\item {{\bf Replication \{$M$\{~\}\}}} \hfill \\ Multiplier must be of
+  integral type and can be non-constant. If multiplier is non-constant
+  or if the expression is of type string, the result is a string
+  containing $M$ concatenated copies of expression. If expression is a
+  literal and the multiplier is constant, the expression behaves like
+  numeric replication in Verilog.
+\item {{\bf Indexing [~]}} \hfill \\ Returns a byte, the ASCII code at
+  the given index. Indexes range from $0$ to $N-1$, where $N$ is the
+  number of characters in the string. If index is out of range, the
+  operator returns $0$.
+\end{description}
 
 \begin{table}
-\begin{tabular}{p{0.6\textwidth} p{0.3\textwidth}}
+\begin{tabular}{p{0.6\textwidth} p{0.4\textwidth}}
 \begin{lstlisting}[label=dt!literal!struct, caption=Structure Literals]
 string s1;
 string s2 = "abcdef\n";
@@ -145,3 +174,89 @@ Line 27: s2[1] unchanged, "\0" is not assigned
 \end{tbldesc}
 \end{tabular}
 \end{table}
+
+The methods of \kwstring data-type are
+
+\begin{description}
+
+\item{{\bf len}}
+\begin{Verbatim}[formatcom=\color{blue}, fillcolor=\color{cyan}]
+function int len()
+\end{Verbatim}
+Return value is the length of the string, excluding any termination
+character. For an empty string "", the return value is $0$.
+
+\item{{\bf putc}}
+\begin{Verbatim}[formatcom=\color{blue}, fillcolor=\color{cyan}]
+task putc(int i, byte c)
+\end{Verbatim}
+Task replaces the $i^{th}$ character in \kwstring with the given
+value `c'. `c' is checked for non-zero before action is taken. If
+index $i$ is out of range, then string is un-affected.
+
+\item{{\bf getc}}
+\begin{Verbatim}[formatcom=\color{blue}, fillcolor=\color{cyan}]
+function byte getc(int i)
+\end{Verbatim}
+Returns the ASCII code of the $i^{th}$ character in \kwstring.
+
+\item{{\bf toupper}}
+\begin{Verbatim}[formatcom=\color{blue}, fillcolor=\color{cyan}]
+function string toupper()
+\end{Verbatim}
+Returns a string with characters converted to uppercase, without
+affecting the original \kwstring.
+
+\item{{\bf tolower}}
+\begin{Verbatim}[formatcom=\color{blue}, fillcolor=\color{cyan}]
+function string tolower()
+\end{Verbatim}
+Returns a string with characters converted to lowercase, without
+affecting the original \kwstring.
+
+\item{{\bf compare}}
+\begin{Verbatim}[formatcom=\color{blue}, fillcolor=\color{cyan}]
+function int compare(string s)
+\end{Verbatim}
+Returns value of \kw{ANSI} \lc \kw{strcmp} function.
+
+\item{{\bf icompare}}
+\begin{Verbatim}[formatcom=\color{blue}, fillcolor=\color{cyan}]
+function int icompare(string s)
+\end{Verbatim}
+Returns value of \kw{ANSI} \lc \kw{strcmp} function, but is case
+in-sensitive.
+
+\item{{\bf substr}}
+\begin{Verbatim}[formatcom=\color{blue}, fillcolor=\color{cyan}]
+function string substr(int i, int j)
+\end{Verbatim}
+Returns a new \kwstring that is a substring formed by characters in
+position $i$ through $j$. An empty-string is returned if either $i <
+0$ or $j < i$ or $j >= str.len()$.
+
+\item{{\bf atoi, atohex, atooct, atobin, atoreal}}
+\begin{Verbatim}[formatcom=\color{blue}, fillcolor=\color{cyan}]
+function integer atoi()
+function integer atohex()
+function integer atooct()
+function integer atobin()
+function real    atoreal()
+\end{Verbatim}
+Returns the number after interpretting the string as either decimal,
+hexadecimal, octal, binary or real formats (respective
+functions). These functions expect raw strings and are not \lvlog
+integer literal compliant (cannot interepret \lvlog int literal).
+
+\item{{\bf itoa, hextoa, octtoa, bintoa, realtoa}}
+\begin{Verbatim}[formatcom=\color{blue}, fillcolor=\color{cyan}]
+task itoa(integer i)
+task hextoa(integer i)
+task octtoa(integer i)
+task bintoa(integer i)
+task realtoa(real r)
+\end{Verbatim}
+Family of method to store the ASCII real representation of argument
+into the string in the implied format.
+
+\end{description}

@@ -25,8 +25,8 @@ rmaux:
 	$(TEX) $<
 
 %.html: %.tex $(CUSTOMCSS)
-	-rm -f ohtml/$(<:.tex=.css)
-	$(HTMLTEX) $< $(HTMLTEX_FLAGS)
+#	-rm -f ohtml/$(<:.tex=.css)
+#	$(HTMLTEX) $< $(HTMLTEX_FLAGS)
 	cat $(<:.tex=.css) $(CUSTOMCSS) > ohtml/$(<:.tex=.css)
 	for html in *.html ; do \
 		ruby bin/fix_html.rb $$html > ohtml/$$html 2>&1; \
