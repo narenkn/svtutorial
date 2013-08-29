@@ -31,8 +31,8 @@
 *.tdo
 *.4ct
 *.4tc
-svtut.css
-*.html
+./svtut.css
+./*.html
 *.idv
 *.lg
 svtut.pdf
