@@ -38,13 +38,22 @@ body.children.each { |child|
 ## Hack to make that look better than nothing
 if (! first_div_seen)
   body.children.each { |child|
+    if child and child.child and ('next' ==  child.child['class'])
+      div = Nokogiri::XML::Node.new('div', doc)
+      div['class'] = 'crosslinks'
+      div['id'] = 'nav'
+      div << child.child
+      body.children.first.add_previous_sibling(div)
+      child.remove
+    else
       doc_div << child if ('book-page' != child['class'])
+    end
   }
 end
 
 ## If 'crosslinks' then move it to unordered list
 first_div_seen = false
-link_name_fix = { "up" => "Title Page", "next" => "Next Chapter", "prev" => "Previous Chapter", "tail" => "End of Page" }
+link_name_fix = { "up" => "Title Page", "next" => "Next Chapter", "prev" => "Previous Chapter" }
 body.children.each { |child|
   if ('crosslinks' == child['class'])
     child['id'] = 'nav'
@@ -63,6 +72,27 @@ body.children.each { |child|
           end
         }
         p.remove
+        ## Add PDF download option
+        li = Nokogiri::XML::Node.new("li", doc)
+        a  = Nokogiri::XML::Node.new("a", doc)
+        a.content = "Download PDF"
+        a['href'] = "SV_through_examples.pdf"
+        li << a
+        ul << li
+        ## Add Student Project
+        li = Nokogiri::XML::Node.new("li", doc)
+        a  = Nokogiri::XML::Node.new("a", doc)
+        a.content = "College Projects"
+        a['href'] = "college_projects.html"
+        li << a
+        ul << li
+        # ## Donate
+        # li = Nokogiri::XML::Node.new("li", doc)
+        # a  = Nokogiri::XML::Node.new("a", doc)
+        # a.content = "Donate"
+        # a['href'] = "SV_through_examples.pdf"
+        # li << a
+        # ul << li
       }
       child << ul
       first_div_seen = true
@@ -71,6 +101,25 @@ body.children.each { |child|
     end
   end
 }
+
+## What ever is body, change to body-main
+#body_main = Nokogiri::XML::Node.new('div', doc)
+#body_main['id'] = 'body_main'
+#body.children.each { |child|
+#    body_main << child
+#}
+#body << body_main
+
+## Add right div
+div = Nokogiri::XML::Node.new('div', doc)
+div['id'] = 'rightlinks'
+ul  = Nokogiri::XML::Node.new('ul',  doc)
+ul['id'] = 'navigation'
+li  = Nokogiri::XML::Node.new('li',  doc)
+li.inner_html = '<a href="https://twitter.com/svtut2013"><img alt="Twitter" src="https://abs.twimg.com/a/1377795275/images/resources/twitter-bird-blue-on-white.png" height="50" width="50" title="Follow @svtut2013" /></a>'
+ul << li
+div << ul
+body << div
 
 ## Print the modified HTML
 html = doc.to_html

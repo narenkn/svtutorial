@@ -163,6 +163,7 @@ div#fancyvrb10{ color: blue; }
 div#fancyvrb10{ background-color: #00FFFF;}
 /* end css.sty */
 
+
 body {
     /* Serif options */
     /*font-family: "Times New Roman", Times, serif;*/
@@ -177,14 +178,14 @@ body {
     /*font-family: Tahoma, Geneva, sans-serif;*/
     /*font-family: Baskerville, 'Times New Roman', Times, serif;*/
 
-
-    padding:1em;
     font-size: 14px;
     font-weight:300;    
     line-height: 20px;
-    margin-top:80px;
     margin:0px auto;
-    max-width:90%;
+    margin-top:50px;
+    margin-left:50px;
+    margin-bottom:50px;
+    max-width:75%;
     background:#7e7e7e;
     color:#333;
 }
@@ -196,7 +197,17 @@ body {
     box-shadow: 0px 1px 50px #5E5E5E;
     position:fixed;
     top:0px;
-    max-width:90%;
+    max-width:75%;
+}
+
+#rightlinks {
+    background-color:#262626;
+    width:15%;
+    position:fixed;
+    right:2%;
+    bottom:10%;
+    height:80%;
+    align: center;
 }
 
 #navigation {
@@ -214,13 +225,6 @@ body {
 #nav a:hover {
     color:#BDBDBD;
 }
-
-//.crosslinks {
-//    text-align: center;
-//    font-size: 24px;
-//    padding:2em;
-//    background:#786d5f;
-//}
 
 .next {
     padding:1em;

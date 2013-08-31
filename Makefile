@@ -31,3 +31,4 @@ rmaux:
 	for html in *.html ; do \
 		ruby bin/fix_html.rb $$html > ohtml/$$html 2>&1; \
 	done
+	cp -f $(<:.tex=.pdf) ohtml/SV_through_examples.pdf
