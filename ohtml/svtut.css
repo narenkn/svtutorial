@@ -1,21 +1,31 @@
  
 /* start css.sty */
 .cmr-10x-x-109{}
-.cmbx-12x-x-144{font-size:157%; font-weight: bold;}
-.cmbx-12x-x-144{ font-weight: bold;}
-.cmr-12{font-size:109%;}
+.ecbx-1728{font-size:154%; font-weight: bold;}
+.ecbx-1728{ font-weight: bold;}
+.ecbx-1728{ font-weight: bold;}
+.ecbx-1728{ font-weight: bold;}
+.ecbx-1728{ font-weight: bold;}
+.ecrm-1200{font-size:109%;}
 .cmr-8{font-size:72%;}
-.cmr-6{font-size:54%;}
 .cmmi-8{font-size:72%;font-style: italic;}
-.pcrr7t-x-x-109{font-family: monospace;}
-.cmbx-10x-x-109{ font-weight: bold;}
-.cmbx-10x-x-109{ font-weight: bold;}
-.pcrb7t-x-x-109{ font-family: monospace; font-weight: bold;}
-.pcrr7t-x-x-90{font-size:81%;font-family: monospace;}
-.cmsy-10x-x-109{}
+.ec-lmtt-10x-x-109{ font-family: monospace;}
+.ec-lmtt-10x-x-109{ font-family: monospace;}
+.ec-lmtt-10x-x-109{ font-family: monospace;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ecbx-1095{ font-weight: bold;}
+.ec-lmtk-10x-x-109{ font-family: monospace;}
+.ec-lmtk-10x-x-109{ font-family: monospace;}
+.ec-lmtk-10x-x-109{ font-family: monospace;}
+.ec-lmtt-9{font-size:81%; font-family: monospace;}
+.ec-lmtt-9{ font-family: monospace;}
+.ec-lmtt-9{ font-family: monospace;}
+.ecrm-0600{font-size:54%;}
 .cmmi-10x-x-109{font-style: italic;}
-.pcrr7t-x-x-60{font-size:54%;font-family: monospace;}
-.cmbsy-10x-x-109{font-weight: bold;}
+.cmsy-10x-x-109{}
 @media print {span.next {visibility:hidden;}}
 p.noindent { text-indent: 0em }
 td p.noindent { text-indent: 0em; margin-top:0em; }
@@ -104,6 +114,23 @@ div.pmatrix {text-align:center;}
 table.pmatrix {width:100%;}
 span.bar-css {text-decoration:overline;}
 img.cdots{vertical-align:middle;}
+div.tabular, div.center div.tabular {text-align: center; margin-top:0.5em; margin-bottom:0.5em; }
+table.tabular td p{margin-top:0em;}
+table.tabular {margin-left: auto; margin-right: auto;}
+td p:first-child{ margin-top:0em; }
+td p:last-child{ margin-bottom:0em; }
+div.td00{ margin-left:0pt; margin-right:0pt; }
+div.td01{ margin-left:0pt; margin-right:5pt; }
+div.td10{ margin-left:5pt; margin-right:0pt; }
+div.td11{ margin-left:5pt; margin-right:5pt; }
+table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+td.td00{ padding-left:0pt; padding-right:0pt; }
+td.td01{ padding-left:0pt; padding-right:5pt; }
+td.td10{ padding-left:5pt; padding-right:0pt; }
+td.td11{ padding-left:5pt; padding-right:5pt; }
+table[rules] {border-left:solid black 0.4pt; border-right:solid black 0.4pt; }
+.hline hr, .cline hr{ height : 1px; margin:0px; }
+div.array {text-align:center;}
 .partToc a, .partToc, .likepartToc a, .likepartToc {line-height: 200%; font-weight:bold; font-size:110%;}
 .chapterToc a, .chapterToc, .likechapterToc a, .likechapterToc, .appendixToc a, .appendixToc {line-height: 200%; font-weight:bold;}
 .index-item, .index-subitem, .index-subsubitem {display:block}
@@ -137,10 +164,11 @@ h1.partHead{text-align: center}
 div.lstlisting{font-family: monospace; white-space: nowrap; margin-top:0.5em; margin-bottom:0.5em; }
 div.lstinputlisting{ font-family: monospace; white-space: nowrap; }
 .lstinputlisting .label{margin-right:0.5em;}
-div.verbatiminput {font-family: monospace; white-space: nowrap; }
-P.fancyvrb {white-space: nowrap; margin:0em;}
 .alltt P { margin-bottom : 0em; margin-top : 0em; }
 .alltt { margin-bottom : 1em; margin-top : 1em; }
+div.verbatiminput {font-family: monospace; white-space: nowrap; }
+P.fancyvrb {white-space: nowrap; margin:0em;}
+tr#TBL-3-2-{background-color:}
 div#fancyvrb1{ color: blue; }
 div#fancyvrb1{ background-color: #00FFFF;}
 div#fancyvrb2{ color: blue; }
@@ -162,7 +190,6 @@ div#fancyvrb9{ background-color: #00FFFF;}
 div#fancyvrb10{ color: blue; }
 div#fancyvrb10{ background-color: #00FFFF;}
 /* end css.sty */
-
 
 body {
     /* Serif options */
@@ -315,10 +342,15 @@ img {
     max-width: 100%;
 }
 
+.caption {
+    background-color: cyan;
+}
+
 .verbatim {
     font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
     color: black;
-    font-size: 10px;
+    background-color: #FFFF66;
+    font-size: 8px;
 }
 
 .label {

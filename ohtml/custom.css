@@ -149,10 +149,15 @@ img {
     max-width: 100%;
 }
 
+.caption {
+    background-color: cyan;
+}
+
 .verbatim {
     font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
     color: black;
-    font-size: 10px;
+    background-color: #FFFF66;
+    font-size: 8px;
 }
 
 .label {

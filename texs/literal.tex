@@ -39,45 +39,20 @@ the replicate operator ( \{\{~\}\} ) allowed.  The nesting of braces
 must follow the number of dimensions, unlike in C. However, replicate
 operators can be nested.
 
-\begin{table}
-\begin{tabular}{p{0.6\textwidth} p{0.3\textwidth}}
 \begin{lstlisting}[label=lst!literal!array, caption=Array Literal
     examples]
 int n[1:2][1:3] = '{'{0,1,2},'{3{4}}};
 int n[1:2][1:6] = '{2{'{3{4, 5}}}};
-\end{lstlisting}
-&
-\begin{tbldesc}
-\begin{verbatim}
-
-
-Line 1: becomes '{'{0,1,2}, '{4, 4, 4}}
-Line 2: becomes '{'{4,5,4,5,4,5},'{4,5,4,5,4,5}}
-\end{verbatim}
-\end{tbldesc}
-\end{tabular}
-\end{table}
-
-Array literals can also use their index or type as a key and use a
-default key value. Both lines of Listing~\ref{lst!literal!arr2} are
-equivalent.
-\begin{table}
-\begin{tabular}{p{0.6\textwidth} p{0.3\textwidth}}
-\begin{lstlisting}[label=lst!literal!arr2, caption=Array Literal with
-    default value]
 int b[0:3] = '{1:1, default:0};
 int b[0:3] = '{1:1, int:0};
 \end{lstlisting}
-&
-\begin{tbldesc}
-\begin{verbatim}
 
-
-Line 1, 2: both becomes [0, 1, 0, 0]
-\end{verbatim}
-\end{tbldesc}
-\end{tabular}
-\end{table}
+In Listing~\ref{lst!literal!array}, line 1 gets expanded to
+\verb|'{'{0,1,2}, '{4, 4, 4}}| and line 2 gets expanded to
+\verb|'{'{4,5,4,5,4,5},'{4,5,4,5,4,5}}|.  Array literals can also use
+their index or type as a key and use a default key value. Both lines
+of Listing~\ref{lst!literal!array} are equivalent. Line 3, 4: both
+become \verb|[0, 1, 0, 0]|.
 
 \section{Structure}
 A structure literal must have a type, which may be either explicitly
@@ -86,8 +61,9 @@ context. Nested braces should reflect the structure as in
 Listing~\ref{lst!literal!struct}. Unordered values as in line 4, would
 be an error.
 
+\rowcolors{1}{}{yellow!25}
 \begin{table}
-\begin{tabular}{p{0.6\textwidth} p{0.3\textwidth}}
+\begin{tabular}{p\textwidth}
 \begin{lstlisting}[label=lst!literal!struct, caption=Structure Literals]
 struct {int a; shortreal b;} ab, ab2[2];
 ab = '{0, 0.0};
@@ -95,30 +71,24 @@ ab2 = '{'{1, 1.1}, '{2, 2.2}};
 ab2 = '{1, 1.1, 2, 2.2};
 ab = '{int:1, shortreal:1.1};
 ab = '{default:0};
-
-struct {int a, b[4];} ab [2][3] =
-                '{2{'{3{a,'{2{b,c}}}}}};
+struct {int a, b[4];} ab [2][3] = '{2{'{3{a,'{2{b,c}}}}}};
 \end{lstlisting}
-&
+\\
 \begin{tbldesc}
 \begin{verbatim}
-
-
-Line 4: Error: need to brace array elements
+Line 4: Error: Only Line 3 format supported
 Line 5: becomes '{1, 1.1}
 Line 6: becomes '{0, 0.0}
-Line 8:
+Line 7: is expanded as...
  '{2{ '{3{ a, '{b, c, b, c} }} }}
- '{2{ '{a, '{b,c,b,c}}, '{a, '{b,c,b,c}},
-                      '{a, '{b,c,b,c}} }}
- '{ '{ '{a, '{b,c,b,c}}, '{a, '{b,c,b,c}},
-                      '{a, '{b,c,b,c}} },
-    '{ '{a, '{b,c,b,c}}, '{a, '{b,c,b,c}},
-                      '{a, '{b,c,b,c}} } }
+ '{2{ '{a, '{b,c,b,c}}, '{a, '{b,c,b,c}}, '{a, '{b,c,b,c}} }}
+ '{ '{ '{a, '{b,c,b,c}}, '{a, '{b,c,b,c}}, '{a, '{b,c,b,c}} },
+    '{ '{a, '{b,c,b,c}}, '{a, '{b,c,b,c}}, '{a, '{b,c,b,c}} } }
 \end{verbatim}
 \end{tbldesc}
 \end{tabular}
 \end{table}
+\rowcolors{1}{}{}
 
 \section{String}
 \lsvlog adds few special characters to string literals such as
@@ -129,8 +99,9 @@ as C quoted strings such as ``bell'', ``vertical feed'', ``form feed''
 and ``hex number''. \texttt{\textbackslash{}x} should be followed by
 hexadecimal value corresponding to the desired character.
 
+\rowcolors{1}{}{yellow!25}
 \begin{table}
-\begin{tabular}{p{0.6\textwidth} p{0.3\textwidth}}
+\begin{tabular}{p\textwidth}
 \begin{lstlisting}[label=lst!literal!string, caption=String Literal
     Examples]
 byte c3 [0:7] = "Hello World\n";
@@ -138,11 +109,9 @@ byte c4 [7:0] = "Hello World\n";
 bit [10:0] a = "\x41";
 bit [1:4][7:0] h = "hello";
 \end{lstlisting}
-&
+\\
 \begin{tbldesc}
 \begin{verbatim}
-
-
 Line 1: c3[0] = "H", c3[7] = "o"
 Line 2: c4[0] = "H", c4[7] = "H"
 Line 3: assigns to a 'b000_0100_0001
@@ -151,6 +120,7 @@ Line 4: assigns to h "ello"
 \end{tbldesc}
 \end{tabular}
 \end{table}
+\rowcolors{1}{}{}
 
 A string literal can be assigned to an unpacked array of bytes. If the
 size differs, it is left justified. In

@@ -14,16 +14,15 @@
 </ul></div>
 <div class="book-page">
 <h2 class="chapterHead">
-<span class="titlemark">Chapter 2</span><br><a id="x7-110002"></a>Data Types</h2> <span class="pcrb7t-x-x-109">System Verilog</span>adds multiple integer data types,
-string, chandle, and class data types and enhances the Verilog event
-type.
+<span class="titlemark">Chapter 2</span><br><a id="x7-110002"></a>Data Types</h2> <span class="ec-lmtk-10x-x-109">System Verilog</span>adds multiple integer data types, string,
+chandle, and class data types and enhances the Verilog event type.
 <h3 class="sectionHead">
 <span class="titlemark">2.1   </span> <a id="x7-120002.1"></a>Integer data types</h3>
 <!--l. 6--><p class="noindent">Integer data types could be either 2-state or 4-state types. Complete list of
 integer data types are listed in Table <a href="#x7-120011">2.1<!--tex4ht:ref: dt!table!idt --></a>. All integer data types are integral as
 they can be converted to or assigned from a one-dimensional bit-vector. Other
-data types such as <span class="pcrb7t-x-x-109">packedarray</span>, <span class="pcrb7t-x-x-109">packedstruct</span>, <span class="pcrb7t-x-x-109">packedunion</span>, <span class="pcrb7t-x-x-109">enum</span>and
-<span class="pcrb7t-x-x-109">time</span>do also exhibit the integral property.
+data types such as <span class="ec-lmtk-10x-x-109">packedarray</span>, <span class="ec-lmtk-10x-x-109">packedstruct</span>, <span class="ec-lmtk-10x-x-109">packedunion</span>, <span class="ec-lmtk-10x-x-109">enum</span>and <span class="ec-lmtk-10x-x-109">time</span>do
+also exhibit the integral property.
 </p>
 <div class="table">
                                                                      
@@ -39,12 +38,12 @@ data types such as <span class="pcrb7t-x-x-109">packedarray</span>, <span class=
 <span class="id">Table 2.1: </span><span class="content">Integer data types</span>
 </div>
 <!--tex4ht:label?: x7-120011 -->
-<div class="tabular"> <table id="TBL-6" class="tabular" cellspacing="0" cellpadding="0" rules="groups">
-<colgroup id="TBL-6-1g"><col id="TBL-6-1"></colgroup>
-<colgroup id="TBL-6-2g"><col id="TBL-6-2"></colgroup>
-<colgroup id="TBL-6-3g"><col id="TBL-6-3"></colgroup>
-<colgroup id="TBL-6-4g"><col id="TBL-6-4"></colgroup>
-<colgroup id="TBL-6-5g"><col id="TBL-6-5"></colgroup>
+<div class="tabular"> <table id="TBL-4" class="tabular" cellspacing="0" cellpadding="0" rules="groups">
+<colgroup id="TBL-4-1g"><col id="TBL-4-1"></colgroup>
+<colgroup id="TBL-4-2g"><col id="TBL-4-2"></colgroup>
+<colgroup id="TBL-4-3g"><col id="TBL-4-3"></colgroup>
+<colgroup id="TBL-4-4g"><col id="TBL-4-4"></colgroup>
+<colgroup id="TBL-4-5g"><col id="TBL-4-5"></colgroup>
 <tr class="hline">
 <td><hr></td>
 <td><hr></td>
@@ -52,12 +51,12 @@ data types such as <span class="pcrb7t-x-x-109">packedarray</span>, <span class=
 <td><hr></td>
 <td><hr></td>
 </tr>
-<tr style="vertical-align:baseline;" id="TBL-6-1-">
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-1-1" class="td11">Data type</td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-1-2" class="td11">2/4 state</td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-1-3" class="td11">Default Sign-ness</td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-1-4" class="td11">lvalue</td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-1-5" class="td11">rvalue           </td>
+<tr style="vertical-align:baseline;" id="TBL-4-1-">
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-1-1" class="td11"> Data type  </td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-1-2" class="td11"> 2/4 state  </td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-1-3" class="td11"> Default Sign-ness  </td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-1-4" class="td11"> lvalue  </td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-1-5" class="td11"> rvalue          </td>
 </tr>
 <tr class="hline">
 <td><hr></td>
@@ -73,76 +72,14 @@ data types such as <span class="pcrb7t-x-x-109">packedarray</span>, <span class=
 <td><hr></td>
 <td><hr></td>
 </tr>
-<tr style="vertical-align:baseline;" id="TBL-6-2-">
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-2-1" class="td11"><span class="pcrb7t-x-x-109">shortint</span></td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-2-2" class="td11">2-state   </td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-2-3" class="td11">signed               </td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-2-4" class="td11">
-<span class="cmsy-10x-x-109">-</span>2<sup><span class="cmr-8">15</span></sup>
+<tr style="vertical-align:baseline;" id="TBL-4-2-">
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-2-1" class="td11"> <span class="ec-lmtk-10x-x-109">shortint  </span>
 </td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-2-5" class="td11">2<sup><span class="cmr-8">15</span></sup><span class="cmsy-10x-x-109">- </span>1          </td>
-</tr>
-<tr class="hline">
-<td><hr></td>
-<td><hr></td>
-<td><hr></td>
-<td><hr></td>
-<td><hr></td>
-</tr>
-<tr style="vertical-align:baseline;" id="TBL-6-3-">
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-3-1" class="td11"><span class="pcrb7t-x-x-109">int     </span></td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-3-2" class="td11">2-state   </td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-3-3" class="td11">signed               </td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-3-4" class="td11">
-<span class="cmsy-10x-x-109">-</span>2<sup><span class="cmr-8">31</span></sup>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-2-2" class="td11"> 2-state     </td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-2-3" class="td11"> signed                </td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-2-4" class="td11"> <span class="cmsy-10x-x-109">-</span><span class="cmr-10x-x-109">2</span><sup><span class="cmr-8">15</span></sup>
 </td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-3-5" class="td11">2<sup><span class="cmr-8">31</span></sup><span class="cmsy-10x-x-109">- </span>1          </td>
-</tr>
-<tr class="hline">
-<td><hr></td>
-<td><hr></td>
-<td><hr></td>
-<td><hr></td>
-<td><hr></td>
-</tr>
-<tr style="vertical-align:baseline;" id="TBL-6-4-">
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-4-1" class="td11"><span class="pcrb7t-x-x-109">longint </span></td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-4-2" class="td11">2-state   </td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-4-3" class="td11">signed               </td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-4-4" class="td11">
-<span class="cmsy-10x-x-109">-</span>2<sup><span class="cmr-8">63</span></sup>
-</td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-4-5" class="td11">2<sup><span class="cmr-8">63</span></sup><span class="cmsy-10x-x-109">- </span>1          </td>
-</tr>
-<tr class="hline">
-<td><hr></td>
-<td><hr></td>
-<td><hr></td>
-<td><hr></td>
-<td><hr></td>
-</tr>
-<tr style="vertical-align:baseline;" id="TBL-6-5-">
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-5-1" class="td11"><span class="pcrb7t-x-x-109">byte    </span></td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-5-2" class="td11">2-state   </td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-5-3" class="td11">signed               </td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-5-4" class="td11">
-<span class="cmsy-10x-x-109">-</span>2<sup><span class="cmr-8">7</span></sup>
-</td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-5-5" class="td11">2<sup><span class="cmr-8">7</span></sup><span class="cmsy-10x-x-109">- </span>1           </td>
-</tr>
-<tr class="hline">
-<td><hr></td>
-<td><hr></td>
-<td><hr></td>
-<td><hr></td>
-<td><hr></td>
-</tr>
-<tr style="vertical-align:baseline;" id="TBL-6-6-">
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-6-1" class="td11"><span class="pcrb7t-x-x-109">bit     </span></td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-6-2" class="td11">2-state   </td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-6-3" class="td11">unsigned           </td>
-<td colspan="2" style="white-space:nowrap; text-align:left;" id="TBL-6-6-4" class="td11">
-<div class="multicolumn" style="white-space:nowrap; text-align:left;">user-defined vector size</div>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-2-5" class="td11"> <span class="cmr-10x-x-109">2</span><sup><span class="cmr-8">15</span></sup><span class="cmsy-10x-x-109">- </span><span class="cmr-10x-x-109">1         </span>
 </td>
 </tr>
 <tr class="hline">
@@ -152,12 +89,14 @@ data types such as <span class="pcrb7t-x-x-109">packedarray</span>, <span class=
 <td><hr></td>
 <td><hr></td>
 </tr>
-<tr style="vertical-align:baseline;" id="TBL-6-7-">
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-7-1" class="td11"><span class="pcrb7t-x-x-109">logic   </span></td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-7-2" class="td11">4-state   </td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-7-3" class="td11">unsigned           </td>
-<td colspan="2" style="white-space:nowrap; text-align:left;" id="TBL-6-7-4" class="td11">
-<div class="multicolumn" style="white-space:nowrap; text-align:left;">user-defined vector size</div>
+<tr style="vertical-align:baseline;" id="TBL-4-3-">
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-3-1" class="td11"> <span class="ec-lmtk-10x-x-109">int       </span>
+</td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-3-2" class="td11"> 2-state     </td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-3-3" class="td11"> signed                </td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-3-4" class="td11"> <span class="cmsy-10x-x-109">-</span><span class="cmr-10x-x-109">2</span><sup><span class="cmr-8">31</span></sup>
+</td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-3-5" class="td11"> <span class="cmr-10x-x-109">2</span><sup><span class="cmr-8">31</span></sup><span class="cmsy-10x-x-109">- </span><span class="cmr-10x-x-109">1         </span>
 </td>
 </tr>
 <tr class="hline">
@@ -167,12 +106,14 @@ data types such as <span class="pcrb7t-x-x-109">packedarray</span>, <span class=
 <td><hr></td>
 <td><hr></td>
 </tr>
-<tr style="vertical-align:baseline;" id="TBL-6-8-">
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-8-1" class="td11"><span class="pcrb7t-x-x-109">reg     </span></td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-8-2" class="td11">4-state   </td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-8-3" class="td11">unsigned           </td>
-<td colspan="2" style="white-space:nowrap; text-align:left;" id="TBL-6-8-4" class="td11">
-<div class="multicolumn" style="white-space:nowrap; text-align:left;">user-defined vector size</div>
+<tr style="vertical-align:baseline;" id="TBL-4-4-">
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-4-1" class="td11"> <span class="ec-lmtk-10x-x-109">longint   </span>
+</td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-4-2" class="td11"> 2-state     </td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-4-3" class="td11"> signed                </td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-4-4" class="td11"> <span class="cmsy-10x-x-109">-</span><span class="cmr-10x-x-109">2</span><sup><span class="cmr-8">63</span></sup>
+</td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-4-5" class="td11"> <span class="cmr-10x-x-109">2</span><sup><span class="cmr-8">63</span></sup><span class="cmsy-10x-x-109">- </span><span class="cmr-10x-x-109">1         </span>
 </td>
 </tr>
 <tr class="hline">
@@ -182,14 +123,15 @@ data types such as <span class="pcrb7t-x-x-109">packedarray</span>, <span class=
 <td><hr></td>
 <td><hr></td>
 </tr>
-<tr style="vertical-align:baseline;" id="TBL-6-9-">
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-9-1" class="td11"><span class="pcrb7t-x-x-109">integer </span></td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-9-2" class="td11">4-state   </td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-9-3" class="td11">signed               </td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-9-4" class="td11">
-<span class="cmsy-10x-x-109">-</span>2<sup><span class="cmr-8">31</span></sup>
+<tr style="vertical-align:baseline;" id="TBL-4-5-">
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-5-1" class="td11"> <span class="ec-lmtk-10x-x-109">byte      </span>
 </td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-9-5" class="td11">2<sup><span class="cmr-8">31</span></sup><span class="cmsy-10x-x-109">- </span>1          </td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-5-2" class="td11"> 2-state     </td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-5-3" class="td11"> signed                </td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-5-4" class="td11"> <span class="cmsy-10x-x-109">-</span><span class="cmr-10x-x-109">2</span><sup><span class="cmr-8">7</span></sup>
+</td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-5-5" class="td11"> <span class="cmr-10x-x-109">2</span><sup><span class="cmr-8">7</span></sup><span class="cmsy-10x-x-109">- </span><span class="cmr-10x-x-109">1          </span>
+</td>
 </tr>
 <tr class="hline">
 <td><hr></td>
@@ -198,12 +140,13 @@ data types such as <span class="pcrb7t-x-x-109">packedarray</span>, <span class=
 <td><hr></td>
 <td><hr></td>
 </tr>
-<tr style="vertical-align:baseline;" id="TBL-6-10-">
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-10-1" class="td11"><span class="pcrb7t-x-x-109">time    </span></td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-10-2" class="td11">4-state   </td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-10-3" class="td11">unsigned           </td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-10-4" class="td11">0      </td>
-<td style="white-space:nowrap; text-align:left;" id="TBL-6-10-5" class="td11">2<sup><span class="cmr-8">64</span></sup><span class="cmsy-10x-x-109">- </span>1          </td>
+<tr style="vertical-align:baseline;" id="TBL-4-6-">
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-6-1" class="td11"> <span class="ec-lmtk-10x-x-109">bit       </span>
+</td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-6-2" class="td11"> 2-state     </td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-6-3" class="td11"> unsigned             </td>
+<td colspan="2" style="white-space:nowrap; text-align:left;" id="TBL-4-6-4" class="td11"> <div class="multicolumn" style="white-space:nowrap; text-align:left;">user-defined vector size</div>
+</td>
 </tr>
 <tr class="hline">
 <td><hr></td>
@@ -212,7 +155,71 @@ data types such as <span class="pcrb7t-x-x-109">packedarray</span>, <span class=
 <td><hr></td>
 <td><hr></td>
 </tr>
-<tr style="vertical-align:baseline;" id="TBL-6-11-"><td style="white-space:nowrap; text-align:left;" id="TBL-6-11-1" class="td11">        </td></tr>
+<tr style="vertical-align:baseline;" id="TBL-4-7-">
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-7-1" class="td11"> <span class="ec-lmtk-10x-x-109">logic     </span>
+</td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-7-2" class="td11"> 4-state     </td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-7-3" class="td11"> unsigned             </td>
+<td colspan="2" style="white-space:nowrap; text-align:left;" id="TBL-4-7-4" class="td11"> <div class="multicolumn" style="white-space:nowrap; text-align:left;">user-defined vector size</div>
+</td>
+</tr>
+<tr class="hline">
+<td><hr></td>
+<td><hr></td>
+<td><hr></td>
+<td><hr></td>
+<td><hr></td>
+</tr>
+<tr style="vertical-align:baseline;" id="TBL-4-8-">
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-8-1" class="td11"> <span class="ec-lmtk-10x-x-109">reg       </span>
+</td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-8-2" class="td11"> 4-state     </td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-8-3" class="td11"> unsigned             </td>
+<td colspan="2" style="white-space:nowrap; text-align:left;" id="TBL-4-8-4" class="td11"> <div class="multicolumn" style="white-space:nowrap; text-align:left;">user-defined vector size</div>
+</td>
+</tr>
+<tr class="hline">
+<td><hr></td>
+<td><hr></td>
+<td><hr></td>
+<td><hr></td>
+<td><hr></td>
+</tr>
+<tr style="vertical-align:baseline;" id="TBL-4-9-">
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-9-1" class="td11"> <span class="ec-lmtk-10x-x-109">integer   </span>
+</td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-9-2" class="td11"> 4-state     </td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-9-3" class="td11"> signed                </td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-9-4" class="td11"> <span class="cmsy-10x-x-109">-</span><span class="cmr-10x-x-109">2</span><sup><span class="cmr-8">31</span></sup>
+</td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-9-5" class="td11"> <span class="cmr-10x-x-109">2</span><sup><span class="cmr-8">31</span></sup><span class="cmsy-10x-x-109">- </span><span class="cmr-10x-x-109">1         </span>
+</td>
+</tr>
+<tr class="hline">
+<td><hr></td>
+<td><hr></td>
+<td><hr></td>
+<td><hr></td>
+<td><hr></td>
+</tr>
+<tr style="vertical-align:baseline;" id="TBL-4-10-">
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-10-1" class="td11"> <span class="ec-lmtk-10x-x-109">time      </span>
+</td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-10-2" class="td11"> 4-state     </td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-10-3" class="td11"> unsigned             </td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-10-4" class="td11"> <span class="cmr-10x-x-109">0        </span>
+</td>
+<td style="white-space:nowrap; text-align:left;" id="TBL-4-10-5" class="td11"> <span class="cmr-10x-x-109">2</span><sup><span class="cmr-8">64</span></sup><span class="cmsy-10x-x-109">- </span><span class="cmr-10x-x-109">1         </span>
+</td>
+</tr>
+<tr class="hline">
+<td><hr></td>
+<td><hr></td>
+<td><hr></td>
+<td><hr></td>
+<td><hr></td>
+</tr>
+<tr style="vertical-align:baseline;" id="TBL-4-11-"><td style="white-space:nowrap; text-align:left;" id="TBL-4-11-1" class="td11">           </td></tr>
 </table>
 </div>
                                                                      
@@ -224,54 +231,54 @@ data types such as <span class="pcrb7t-x-x-109">packedarray</span>, <span class=
 <!--l. 42--><p class="noindent">Every bit of a 2-state data-type could hold the value &#8217;0&#8217; or &#8217;1&#8217;, whereous each bit
 of a 4-state data-type could hold values &#8217;0&#8217;, &#8217;1&#8217;, &#8217;X&#8217; or &#8217;Z&#8217;.
 <!--l. 46--></p>
-<p class="noindent">All integer data types could be either <span class="pcrb7t-x-x-109">signed</span>or <span class="pcrb7t-x-x-109">unsigned</span>. It becomes
+<p class="noindent">All integer data types could be either <span class="ec-lmtk-10x-x-109">signed</span>or <span class="ec-lmtk-10x-x-109">unsigned</span>. It becomes
 important to understand sign-ness to understand the boundaries of each
-data-type. When an integer data type is declared to be <span class="pcrb7t-x-x-109">unsigned</span>, it
-would have range from 0 to 2<sup><span class="cmmi-8">n</span></sup><span class="cmsy-10x-x-109">- </span>1, where <span class="cmmi-10x-x-109">n </span>is the number of bits in the
+data-type. When an integer data type is declared to be <span class="ec-lmtk-10x-x-109">unsigned</span>, it
+would have range from <span class="cmr-10x-x-109">0 </span>to <span class="cmr-10x-x-109">2</span><sup><span class="cmmi-8">n</span></sup><span class="cmsy-10x-x-109">- </span><span class="cmr-10x-x-109">1</span>, where <span class="cmmi-10x-x-109">n </span>is the number of bits in the
 type.
 </p>
 <h3 class="sectionHead">
 <span class="titlemark">2.2   </span> <a id="x7-130002.2"></a>Floating-point data types</h3>
-<!--l. 53--><p class="noindent"><span class="pcrb7t-x-x-109">Verilog</span>already defines <span class="pcrb7t-x-x-109">real</span>, which is equivalent to <span class="pcrb7t-x-x-109">C</span>&#8217;s <span class="pcrb7t-x-x-109">double </span>data-type.
-<span class="pcrb7t-x-x-109">System Verilog</span>defines <span class="pcrb7t-x-x-109">shortreal</span>data-type, that is equivalent to <span class="pcrb7t-x-x-109">C</span>&#8217;s
-<span class="pcrb7t-x-x-109">float</span>. In general implementations of <span class="pcrb7t-x-x-109">C </span>compilers, <span class="pcrb7t-x-x-109">float </span>has 7 decimal
-precision, whereous <span class="pcrb7t-x-x-109">double </span>has a precision of 15.
+<!--l. 53--><p class="noindent"><span class="ec-lmtk-10x-x-109">Verilog</span>already defines <span class="ec-lmtk-10x-x-109">real</span>, which is equivalent to <span class="ec-lmtk-10x-x-109">C</span>&#8217;s <span class="ec-lmtk-10x-x-109">double </span>data-type. <span class="ec-lmtk-10x-x-109">System</span>
+<span class="ec-lmtk-10x-x-109">Verilog</span>defines <span class="ec-lmtk-10x-x-109">shortreal</span>data-type, that is equivalent to <span class="ec-lmtk-10x-x-109">C</span>&#8217;s <span class="ec-lmtk-10x-x-109">float</span>. In general
+implementations of <span class="ec-lmtk-10x-x-109">C </span>compilers, <span class="ec-lmtk-10x-x-109">float </span>has 7 decimal precision, whereous <span class="ec-lmtk-10x-x-109">double</span>
+has a precision of 15.
 <!--l. 59--></p>
 <p class="noindent">
 </p>
 <h3 class="sectionHead">
 <span class="titlemark">2.3   </span> <a id="x7-140002.3"></a>void</h3>
-<!--l. 60--><p class="noindent">The <span class="pcrb7t-x-x-109">void</span>data type represents nonexistent data. This type can be specified as
-the return type of functions to indicate no return value. This type can also be
-used for members of tagged unions.
+<!--l. 60--><p class="noindent">The <span class="ec-lmtk-10x-x-109">void</span>data type represents nonexistent data. This type can be specified as the
+return type of functions to indicate no return value. This type can also be used
+for members of tagged unions.
 <!--l. 64--></p>
 <p class="noindent">
 </p>
 <h3 class="sectionHead">
 <span class="titlemark">2.4   </span> <a id="x7-150002.4"></a>chandle</h3>
-<!--l. 65--><p class="noindent">The <span class="pcrb7t-x-x-109">chandle</span>data type represents storage for pointers. Its only application is to
+<!--l. 65--><p class="noindent">The <span class="ec-lmtk-10x-x-109">chandle</span>data type represents storage for pointers. Its only application is to
                                                                      
 
                                                                      
-store DPI returned pointers. <span class="pcrb7t-x-x-109">System Verilog</span>can neither create nor destroy <span class="pcrb7t-x-x-109">C</span>
-pointers. <span class="pcrb7t-x-x-109">chandle</span>have initial value as <span class="pcrb7t-x-x-109">null</span>. <span class="pcrb7t-x-x-109">chandle</span>could be used in boolean
-equations to test for equality <span class="pcrr7t-x-x-109">==, !=, ===, !==</span>. In boolean context, a
-<span class="pcrb7t-x-x-109">chandle</span>evaluates to 0 if <span class="pcrb7t-x-x-109">null</span>or to 1 otherwise. It should be obvious that
-<span class="pcrb7t-x-x-109">chandle</span>could be used as arguments to <span class="pcrb7t-x-x-109">function</span>or <span class="pcrb7t-x-x-109">task</span>but not as
+store DPI returned pointers. <span class="ec-lmtk-10x-x-109">System Verilog</span>can neither create nor destroy <span class="ec-lmtk-10x-x-109">C</span>
+pointers. <span class="ec-lmtk-10x-x-109">chandle</span>have initial value as <span class="ec-lmtk-10x-x-109">null</span>. <span class="ec-lmtk-10x-x-109">chandle</span>could be used in boolean
+equations to test for equality <span class="ec-lmtt-10x-x-109">==, !=, ===, !==</span>. In boolean context, a
+<span class="ec-lmtk-10x-x-109">chandle</span>evaluates to 0 if <span class="ec-lmtk-10x-x-109">null</span>or to 1 otherwise. It should be obvious
+that <span class="ec-lmtk-10x-x-109">chandle</span>could be used as arguments to <span class="ec-lmtk-10x-x-109">function</span>or <span class="ec-lmtk-10x-x-109">task</span>but not as
 ports.
 <!--l. 74--></p>
 <p class="noindent">
 </p>
 <h3 class="sectionHead">
 <span class="titlemark">2.5   </span> <a id="x7-160002.5"></a>string</h3>
-<!--l. 75--><p class="noindent"><span class="pcrb7t-x-x-109">System Verilog</span>&#8217;s <span class="pcrb7t-x-x-109">string</span>is a built-in data-type. It is dynamic as its length
-may vary during simulation. It could be assigned from a string literal.
-<span class="pcrb7t-x-x-109">string</span>data-type allows indexing single or a group of characters. Unlike
-<span class="pcrb7t-x-x-109">C</span>, <span class="pcrb7t-x-x-109">System Verilog</span>&#8217;s <span class="pcrb7t-x-x-109">string</span>doesn&#8217;t contain the special character
-&#8217;<span class="cmsy-10x-x-109">\</span>0&#8217;.
+<!--l. 75--><p class="noindent"><span class="ec-lmtk-10x-x-109">System Verilog</span>&#8217;s <span class="ec-lmtk-10x-x-109">string</span>is a built-in data-type. It is dynamic as its
+length may vary during simulation. It could be assigned from a string
+literal. <span class="ec-lmtk-10x-x-109">string</span>data-type allows indexing single or a group of characters.
+Unlike <span class="ec-lmtk-10x-x-109">C</span>, <span class="ec-lmtk-10x-x-109">System Verilog</span>&#8217;s <span class="ec-lmtk-10x-x-109">string</span>doesn&#8217;t contain the special character
+&#8217;\0&#8217;.
 <!--l. 81--></p>
-<p class="noindent">Special string operators exists for <span class="pcrb7t-x-x-109">string</span>data type. These operators are invoked
-only if either of operands is a <span class="pcrb7t-x-x-109">string</span>data type. Otherwise, when both operands
+<p class="noindent">Special string operators exists for <span class="ec-lmtk-10x-x-109">string</span>data type. These operators are invoked
+only if either of operands is a <span class="ec-lmtk-10x-x-109">string</span>data type. Otherwise, when both operands
 are string literals, the behaviour would be comparable with Verilog, where integer
 operators are invoked in most cases. If the result of the operator is used in
 another expression involving string types, it is implicitly converted to the string
@@ -281,9 +288,9 @@ type.
 <dt class="description">
  </dt>
 <dd class="description">
-     <span class="cmbx-10x-x-109">Equality</span>
-     <span class="cmbx-10x-x-109">operator</span>
-     <span class="cmbx-10x-x-109">==</span>
+     <span class="ecbx-1095">Equality</span>
+     <span class="ecbx-1095">operator</span>
+     <span class="ecbx-1095">==</span>
      <!--l. 89--><p class="noindent">Checks
      whether
      the
@@ -312,9 +319,9 @@ type.
 <dt class="description">
  </dt>
 <dd class="description">
-     <span class="cmbx-10x-x-109">Inequality</span>
-     <span class="cmbx-10x-x-109">operator</span>
-     <span class="cmbx-10x-x-109">!=</span>
+     <span class="ecbx-1095">Inequality</span>
+     <span class="ecbx-1095">operator</span>
+     <span class="ecbx-1095">!=</span>
      <!--l. 92--><p class="noindent">Logical
      negation
      of
@@ -325,9 +332,9 @@ type.
 <dt class="description">
  </dt>
 <dd class="description">
-     <span class="cmbx-10x-x-109">Comparison</span>
-     <span class="cmbx-10x-x-109">operators</span>
-     <span class="cmmi-10x-x-109">&lt;,&gt;,&lt;</span>=<span class="cmmi-10x-x-109">,&gt;</span>=
+     <span class="ecbx-1095">Comparison</span>
+     <span class="ecbx-1095">operators</span>
+     <span class="cmmi-10x-x-109">&lt;,&gt;,&lt;</span><span class="cmr-10x-x-109">=</span><span class="cmmi-10x-x-109">,&gt;</span><span class="cmr-10x-x-109">=</span>
      <!--l. 94--><p class="noindent">Relational
      operators
      return
@@ -356,8 +363,8 @@ type.
 <dt class="description">
  </dt>
 <dd class="description">
-     <span class="cmbx-10x-x-109">Concatenation</span>
-     <span class="cmbsy-10x-x-109">{</span><span class="cmbx-10x-x-109"> </span><span class="cmbsy-10x-x-109">}</span>
+     <span class="ecbx-1095">Concatenation</span>
+     <span class="ecbx-1095">{</span><span class="ecbx-1095"> }</span>
      <!--l. 97--><p class="noindent">The
      string
      concatenation
@@ -385,8 +392,8 @@ type.
                                                                      
  </dt>
 <dd class="description">
-     <span class="cmbx-10x-x-109">Replication</span>
-     <span class="cmbsy-10x-x-109">{</span><span class="cmmi-10x-x-109">M</span><span class="cmbsy-10x-x-109">{</span><span class="cmbx-10x-x-109"> </span><span class="cmbsy-10x-x-109">}}</span>
+     <span class="ecbx-1095">Replication</span>
+     <span class="ecbx-1095">{</span><span class="cmmi-10x-x-109">M</span><span class="ecbx-1095">{</span><span class="ecbx-1095"> }}</span>
      <!--l. 100--><p class="noindent">Multiplier
      must
      be
@@ -446,8 +453,8 @@ type.
 <dt class="description">
  </dt>
 <dd class="description">
-     <span class="cmbx-10x-x-109">Indexing</span>
-     <span class="cmbx-10x-x-109">[</span><span class="cmbx-10x-x-109"> ]</span>
+     <span class="ecbx-1095">Indexing</span>
+     <span class="ecbx-1095">[</span><span class="ecbx-1095"> ]</span>
      <!--l. 106--><p class="noindent">Returns
      a
      byte,
@@ -461,9 +468,9 @@ type.
      Indexes
      range
      from
-     0
+     <span class="cmr-10x-x-109">0</span>
      to
-     <span class="cmmi-10x-x-109">N </span><span class="cmsy-10x-x-109">- </span>1,
+     <span class="cmmi-10x-x-109">N </span><span class="cmsy-10x-x-109">- </span><span class="cmr-10x-x-109">1</span>,
      where
      <span class="cmmi-10x-x-109">N</span>
      is
@@ -486,7 +493,7 @@ type.
      the
      operator
      returns
-     0.</p>
+     <span class="cmr-10x-x-109">0</span>.</p>
 </dd>
 </dl>
 <div class="table">
@@ -499,55 +506,53 @@ type.
                                                                      
 
                                                                      
-<div class="tabular"> <table id="TBL-7" class="tabular" cellspacing="0" cellpadding="0">
-<colgroup id="TBL-7-1g">
-<col id="TBL-7-1">
-<col id="TBL-7-2">
+<div class="tabular"> <table id="TBL-5" class="tabular" cellspacing="0" cellpadding="0">
+<colgroup id="TBL-5-1g">
+<col id="TBL-5-1">
+<col id="TBL-5-2">
 </colgroup>
-<tr style="vertical-align:baseline;" id="TBL-7-1-">
-<td style="white-space:wrap; text-align:left;" id="TBL-7-1-1" class="td11">
-<!--l. 114-->
-<a id="x7-16002"></a>
-<br><div class="caption">
+<tr style="vertical-align:baseline;" id="TBL-5-1-">
+<td style="white-space:wrap; text-align:left;" id="TBL-5-1-1" class="td11"> <!--l. 114-->
+ <a id="x7-16002"></a>
+ <br><div class="caption">
 <span class="id">Listing 2.1:
-     </span><span class="content">Structure
-     Literals</span>
+       </span><span class="content">Structure
+       Literals</span>
 </div>
-<!--tex4ht:label?: x7-16001r2.5 --><div class="lstlisting" id="listing-6">
-<span class="label"><a id="x7-16003r1"></a></span><span class="pcrr7t-x-x-90">string</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">s1</span><span class="pcrr7t-x-x-90">;</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16004r2"></a><span class="cmr-6">2</span></span><span class="pcrr7t-x-x-90">string</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">s2</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">abcdef</span><span class="pcrr7t-x-x-90">\</span><span class="pcrr7t-x-x-90">n</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">;</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16005r3"></a></span><span class="pcrr7t-x-x-90">string</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">s3</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">ghijkl</span><span class="pcrr7t-x-x-90">\0</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">;</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16006r4"></a><span class="cmr-6">4</span></span><span class="pcrr7t-x-x-90">string</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">s4</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">hello</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">;</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16007r5"></a></span><span class="pcrr7t-x-x-90">bit</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">[11:0]</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">b</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">12'</span><span class="pcrr7t-x-x-90">ha41</span><span class="pcrr7t-x-x-90">;</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16008r6"></a><span class="cmr-6">6</span></span><span class="pcrr7t-x-x-90">string</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">s2</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">string</span><span class="pcrr7t-x-x-90">'(</span><span class="pcrr7t-x-x-90">b</span><span class="pcrr7t-x-x-90">)</span><span class="pcrr7t-x-x-90">;</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16009r7"></a></span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16010r8"></a><span class="cmr-6">8</span></span><span class="pcrr7t-x-x-90">typedef</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">reg</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">[15:0]</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">r_t</span><span class="pcrr7t-x-x-90">;</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16011r9"></a></span><span class="pcrr7t-x-x-90">r_t</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">r</span><span class="pcrr7t-x-x-90">;</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16012r10"></a><span class="cmr-6">10</span></span><span class="pcrr7t-x-x-90">integer</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">i</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">1;</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16013r11"></a></span><span class="pcrr7t-x-x-90">string</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">s5</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">;</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16014r12"></a><span class="cmr-6">12</span></span><span class="pcrr7t-x-x-90">string</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">s6</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">{</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">Hi</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">,</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">s5</span><span class="pcrr7t-x-x-90">};</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16015r13"></a></span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16016r14"></a><span class="cmr-6">14</span></span><span class="pcrr7t-x-x-90">r</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">r_t</span><span class="pcrr7t-x-x-90">'(</span><span class="pcrr7t-x-x-90">s6</span><span class="pcrr7t-x-x-90">)</span><span class="pcrr7t-x-x-90">;</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16017r15"></a></span><span class="pcrr7t-x-x-90">s5</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">string</span><span class="pcrr7t-x-x-90">'(</span><span class="pcrr7t-x-x-90">r</span><span class="pcrr7t-x-x-90">)</span><span class="pcrr7t-x-x-90">;</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16018r16"></a><span class="cmr-6">16</span></span><span class="pcrr7t-x-x-90">s5</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">Hi</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">;</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16019r17"></a></span><span class="pcrr7t-x-x-90">s5</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">{5{</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">Hi</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">}};</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16020r18"></a><span class="cmr-6">18</span></span><span class="pcrr7t-x-x-90">s6</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">{</span><span class="pcrr7t-x-x-90">i</span><span class="pcrr7t-x-x-90">{</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">Hi</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">}};</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16021r19"></a></span><span class="pcrr7t-x-x-90">r</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">{</span><span class="pcrr7t-x-x-90">i</span><span class="pcrr7t-x-x-90">{</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">Hi</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">}};</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16022r20"></a><span class="cmr-6">20</span></span><span class="pcrr7t-x-x-90">s6</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">{</span><span class="pcrr7t-x-x-90">i</span><span class="pcrr7t-x-x-90">{</span><span class="pcrr7t-x-x-90">s5</span><span class="pcrr7t-x-x-90">}};</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16023r21"></a></span><span class="pcrr7t-x-x-90">s6</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">{</span><span class="pcrr7t-x-x-90">s6</span><span class="pcrr7t-x-x-90">,</span><span class="pcrr7t-x-x-90">s5</span><span class="pcrr7t-x-x-90">};</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16024r22"></a><span class="cmr-6">22</span></span><span class="pcrr7t-x-x-90">s6</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">{</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">Hi</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">,</span><span class="pcrr7t-x-x-90">s5</span><span class="pcrr7t-x-x-90">};</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16025r23"></a></span><span class="pcrr7t-x-x-90">r</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">{</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">H</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">,</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">};</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16026r24"></a><span class="cmr-6">24</span></span><span class="pcrr7t-x-x-90">b</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">{</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">H</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">,</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">};</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16027r25"></a></span><span class="pcrr7t-x-x-90">s2</span><span class="pcrr7t-x-x-90">[0]</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">h</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">;</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16028r26"></a><span class="cmr-6">26</span></span><span class="pcrr7t-x-x-90">s2</span><span class="pcrr7t-x-x-90">[0]</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">cough</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">;</span><span class="pcrr7t-x-x-90"> </span><br><span class="label"><a id="x7-16029r27"></a></span><span class="pcrr7t-x-x-90">s2</span><span class="pcrr7t-x-x-90">[1]</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">=</span><span class="pcrr7t-x-x-90"> </span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">\0</span><span class="pcrr7t-x-x-90">"</span><span class="pcrr7t-x-x-90">;</span>
+<!--tex4ht:label?: x7-16001r2.5 --><div class="lstlisting" id="listing-5">
+<span class="label"><a id="x7-16003r1"></a></span><span class="ec-lmtt-9">string</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">s1</span><span class="ec-lmtt-9">;</span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16004r2"></a><span class="ecrm-0600">2</span></span><span class="ec-lmtt-9">string</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">s2</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">=</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">abcdef</span><span class="ec-lmtt-9">\</span><span class="ec-lmtt-9">n</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">;</span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16005r3"></a></span><span class="ec-lmtt-9">string</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">s3</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">=</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">ghijkl</span><span class="ec-lmtt-9">\0</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">;</span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16006r4"></a><span class="ecrm-0600">4</span></span><span class="ec-lmtt-9">string</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">s4</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">=</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">hello</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">;</span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16007r5"></a></span><span class="ec-lmtt-9">bit</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">[11:0]</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">b</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">=</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">12&#8217;</span><span class="ec-lmtt-9">ha41</span><span class="ec-lmtt-9">;</span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16008r6"></a><span class="ecrm-0600">6</span></span><span class="ec-lmtt-9">string</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">s2</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">=</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">string</span><span class="ec-lmtt-9">&#8217;(</span><span class="ec-lmtt-9">b</span><span class="ec-lmtt-9">)</span><span class="ec-lmtt-9">;</span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16009r7"></a></span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16010r8"></a><span class="ecrm-0600">8</span></span><span class="ec-lmtt-9">typedef</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">reg</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">[15:0]</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">r_t</span><span class="ec-lmtt-9">;</span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16011r9"></a></span><span class="ec-lmtt-9">r_t</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">r</span><span class="ec-lmtt-9">;</span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16012r10"></a><span class="ecrm-0600">10</span></span><span class="ec-lmtt-9">integer</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">i</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">=</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">1;</span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16013r11"></a></span><span class="ec-lmtt-9">string</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">s5</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">=</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">;</span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16014r12"></a><span class="ecrm-0600">12</span></span><span class="ec-lmtt-9">string</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">s6</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">=</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">{</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">Hi</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">,</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">s5</span><span class="ec-lmtt-9">};</span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16015r13"></a></span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16016r14"></a><span class="ecrm-0600">14</span></span><span class="ec-lmtt-9">r</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">=</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">r_t</span><span class="ec-lmtt-9">&#8217;(</span><span class="ec-lmtt-9">s6</span><span class="ec-lmtt-9">)</span><span class="ec-lmtt-9">;</span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16017r15"></a></span><span class="ec-lmtt-9">s5</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">=</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">string</span><span class="ec-lmtt-9">&#8217;(</span><span class="ec-lmtt-9">r</span><span class="ec-lmtt-9">)</span><span class="ec-lmtt-9">;</span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16018r16"></a><span class="ecrm-0600">16</span></span><span class="ec-lmtt-9">s5</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">=</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">Hi</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">;</span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16019r17"></a></span><span class="ec-lmtt-9">s5</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">=</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">{5{</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">Hi</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">}};</span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16020r18"></a><span class="ecrm-0600">18</span></span><span class="ec-lmtt-9">s6</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">=</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">{</span><span class="ec-lmtt-9">i</span><span class="ec-lmtt-9">{</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">Hi</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">}};</span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16021r19"></a></span><span class="ec-lmtt-9">r</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">=</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">{</span><span class="ec-lmtt-9">i</span><span class="ec-lmtt-9">{</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">Hi</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">}};</span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16022r20"></a><span class="ecrm-0600">20</span></span><span class="ec-lmtt-9">s6</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">=</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">{</span><span class="ec-lmtt-9">i</span><span class="ec-lmtt-9">{</span><span class="ec-lmtt-9">s5</span><span class="ec-lmtt-9">}};</span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16023r21"></a></span><span class="ec-lmtt-9">s6</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">=</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">{</span><span class="ec-lmtt-9">s6</span><span class="ec-lmtt-9">,</span><span class="ec-lmtt-9">s5</span><span class="ec-lmtt-9">};</span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16024r22"></a><span class="ecrm-0600">22</span></span><span class="ec-lmtt-9">s6</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">=</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">{</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">Hi</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">,</span><span class="ec-lmtt-9">s5</span><span class="ec-lmtt-9">};</span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16025r23"></a></span><span class="ec-lmtt-9">r</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">=</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">{</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">H</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">,</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">};</span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16026r24"></a><span class="ecrm-0600">24</span></span><span class="ec-lmtt-9">b</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">=</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">{</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">H</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">,</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">};</span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16027r25"></a></span><span class="ec-lmtt-9">s2</span><span class="ec-lmtt-9">[0]</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">=</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">h</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">;</span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16028r26"></a><span class="ecrm-0600">26</span></span><span class="ec-lmtt-9">s2</span><span class="ec-lmtt-9">[0]</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">=</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">cough</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">;</span><span class="ec-lmtt-9"> </span><br><span class="label"><a id="x7-16029r27"></a></span><span class="ec-lmtt-9">s2</span><span class="ec-lmtt-9">[1]</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">=</span><span class="ec-lmtt-9"> </span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">\0</span><span class="ec-lmtt-9">"</span><span class="ec-lmtt-9">;</span>
+ 
 </div>
-<!--l. 143--><p class="noindent">                                        </p>
+<!--l. 143--><p class="noindent">                                               </p>
 </td>
-<td style="white-space:wrap; text-align:left;" id="TBL-7-1-2" class="td11">
-<div class="verbatim" id="verbatim-5">
- <br>
- <br>Line 1: initialised to ""
- <br>Line 2: OK
- <br>Line 3: '\0' is removed from string
- <br>Line 4: OK
- <br>Line 5: OK
- <br>Line 6: converted to 16'h0a41
- <br>  Note the typecasting operator
- <br>
- <br>Line 9: reg init with 'x
- <br>Line 11: explicit string init to ""
- <br>Line 12: OK value "Hi"
- <br>Line 14: OK value 16'h4869
- <br>Line 15: OK value "Hi"
- <br>Line 16: OK value "Hi"
- <br>Line 17: OK value "HiHiHiHiHi"
- <br>Line 18: OK (non constant replication)
- <br>Line 19: Invalid (non constant replication)
- <br>Line 20: OK value "HiHiHiHiHiHi"
- <br>Line 21: OK
- <br>Line 22: OK value "HiHiHiHiHiHiHi"
- <br>Line 23: 16'4800 ("" is converted to 8'b0)
- <br>Line 24: OK value 12'h048
- <br>Line 25: OK
- <br>Line 26: OK, same as Line 25
- <br>Line 27: s2[1] unchanged, "\0" is not assigned
+<td style="white-space:wrap; text-align:left;" id="TBL-5-1-2" class="td11"> <div class="verbatim" id="verbatim-3">
+  <br>Line 1: initialised to ""
+  <br>Line 2: OK
+  <br>Line 3: &#8217;\0&#8217; is removed from string
+  <br>Line 4: OK
+  <br>Line 5: OK
+  <br>Line 6: converted to 16&#8217;h0a41
+  <br>  Note the typecasting operator
+  <br>
+  <br>Line 9: reg init with &#8217;x
+  <br>Line 11: explicit string init to ""
+  <br>Line 12: OK value "Hi"
+  <br>Line 14: OK value 16&#8217;h4869
+  <br>Line 15: OK value "Hi"
+  <br>Line 16: OK value "Hi"
+  <br>Line 17: OK value "HiHiHiHiHi"
+  <br>Line 18: OK (non constant replication)
+  <br>Line 19: Invalid (non constant replication)
+  <br>Line 20: OK value "HiHiHiHiHiHi"
+  <br>Line 21: OK
+  <br>Line 22: OK value "HiHiHiHiHiHiHi"
+  <br>Line 23: 16&#8217;4800 ("" is converted to 8&#8217;b0)
+  <br>Line 24: OK value 12&#8217;h048
+  <br>Line 25: OK
+  <br>Line 26: OK, same as Line 25
+  <br>Line 27: s2[1] unchanged, "\0" is not assigned 
 </div>
-<!--l. 173--><p class="nopar">                                        </p>
+<!--l. 173--><p class="nopar">                                </p>
 </td>
 </tr>
 </table>
@@ -558,26 +563,26 @@ type.
 </div>
 <hr class="endfloat">
 </div>
-<!--l. 178--><p class="noindent">The methods of <span class="pcrb7t-x-x-109">string</span>data-type are
+<!--l. 178--><p class="noindent">The methods of <span class="ec-lmtk-10x-x-109">string</span>data-type are
      </p>
 <dl class="description">
 <dt class="description">
  </dt>
 <dd class="description">
-<span class="cmbx-10x-x-109">len</span>
-     <div class="fancyvrb" id="fancyvrb1">  <a id="x7-16031r1"></a><span class="pcrr7t-x-x-109"> </span><span class="pcrr7t-x-x-109"> function</span><span class="pcrr7t-x-x-109"> int</span><span class="pcrr7t-x-x-109"> len()</span>
+<span class="ecbx-1095">len</span>
+     <div class="fancyvrb" id="fancyvrb1"> <a id="x7-16031r1"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> function</span><span class="ec-lmtt-10x-x-109"> int</span><span class="ec-lmtt-10x-x-109"> len()</span>
 </div>
      <!--l. 186--><p class="noindent">Return value is the length of the string, excluding any termination
-     character. For an empty string &#8221;&#8221;, the return value is 0.
+     character. For an empty string "", the return value is <span class="cmr-10x-x-109">0</span>.
      </p>
 </dd>
 <dt class="description">
  </dt>
 <dd class="description">
-<span class="cmbx-10x-x-109">putc</span>
-     <div class="fancyvrb" id="fancyvrb2">  <a id="x7-16033r1"></a><span class="pcrr7t-x-x-109"> </span><span class="pcrr7t-x-x-109"> task</span><span class="pcrr7t-x-x-109"> putc(int</span><span class="pcrr7t-x-x-109"> i,</span><span class="pcrr7t-x-x-109"> byte</span><span class="pcrr7t-x-x-109"> c)</span>
+<span class="ecbx-1095">putc</span>
+     <div class="fancyvrb" id="fancyvrb2"> <a id="x7-16033r1"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> task</span><span class="ec-lmtt-10x-x-109"> putc(int</span><span class="ec-lmtt-10x-x-109"> i,</span><span class="ec-lmtt-10x-x-109"> byte</span><span class="ec-lmtt-10x-x-109"> c)</span>
 </div>
-     <!--l. 193--><p class="noindent">Task replaces the <span class="cmmi-10x-x-109">i</span><sup><span class="cmmi-8">th</span></sup> character in <span class="pcrb7t-x-x-109">string</span>with the given value &#8216;c&#8217;. &#8216;c&#8217; is
+     <!--l. 193--><p class="noindent">Task replaces the <span class="cmmi-10x-x-109">i</span><sup><span class="cmmi-8">th</span></sup> character in <span class="ec-lmtk-10x-x-109">string</span>with the given value &#8216;c&#8217;. &#8216;c&#8217; is
      checked for non-zero before action is taken. If index <span class="cmmi-10x-x-109">i </span>is out of range, then
      string is un-affected.
      </p>
@@ -585,84 +590,83 @@ type.
 <dt class="description">
  </dt>
 <dd class="description">
-<span class="cmbx-10x-x-109">getc</span>
-     <div class="fancyvrb" id="fancyvrb3">  <a id="x7-16035r1"></a><span class="pcrr7t-x-x-109"> </span><span class="pcrr7t-x-x-109"> function</span><span class="pcrr7t-x-x-109"> byte</span><span class="pcrr7t-x-x-109"> getc(int</span><span class="pcrr7t-x-x-109"> i)</span>
+<span class="ecbx-1095">getc</span>
+     <div class="fancyvrb" id="fancyvrb3"> <a id="x7-16035r1"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> function</span><span class="ec-lmtt-10x-x-109"> byte</span><span class="ec-lmtt-10x-x-109"> getc(int</span><span class="ec-lmtt-10x-x-109"> i)</span>
 </div>
-     <!--l. 201--><p class="noindent">Returns the ASCII code of the <span class="cmmi-10x-x-109">i</span><sup><span class="cmmi-8">th</span></sup> character in <span class="pcrb7t-x-x-109">string</span>.
+     <!--l. 201--><p class="noindent">Returns the ASCII code of the <span class="cmmi-10x-x-109">i</span><sup><span class="cmmi-8">th</span></sup> character in <span class="ec-lmtk-10x-x-109">string</span>.
      </p>
 </dd>
 <dt class="description">
  </dt>
 <dd class="description">
-<span class="cmbx-10x-x-109">toupper</span>
-     <div class="fancyvrb" id="fancyvrb4">  <a id="x7-16037r1"></a><span class="pcrr7t-x-x-109"> </span><span class="pcrr7t-x-x-109"> function</span><span class="pcrr7t-x-x-109"> string</span><span class="pcrr7t-x-x-109"> toupper()</span>
+<span class="ecbx-1095">toupper</span>
+     <div class="fancyvrb" id="fancyvrb4"> <a id="x7-16037r1"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> function</span><span class="ec-lmtt-10x-x-109"> string</span><span class="ec-lmtt-10x-x-109"> toupper()</span>
 </div>
      <!--l. 207--><p class="noindent">Returns a string with characters converted to uppercase, without affecting
-     the original <span class="pcrb7t-x-x-109">string</span>.
+     the original <span class="ec-lmtk-10x-x-109">string</span>.
      </p>
 </dd>
 <dt class="description">
  </dt>
 <dd class="description">
-<span class="cmbx-10x-x-109">tolower</span>
-     <div class="fancyvrb" id="fancyvrb5">  <a id="x7-16039r1"></a><span class="pcrr7t-x-x-109"> </span><span class="pcrr7t-x-x-109"> function</span><span class="pcrr7t-x-x-109"> string</span><span class="pcrr7t-x-x-109"> tolower()</span>
+<span class="ecbx-1095">tolower</span>
+     <div class="fancyvrb" id="fancyvrb5"> <a id="x7-16039r1"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> function</span><span class="ec-lmtt-10x-x-109"> string</span><span class="ec-lmtt-10x-x-109"> tolower()</span>
 </div>
                                                                      
 
                                                                      
      <!--l. 214--><p class="noindent">Returns a string with characters converted to lowercase, without affecting
-     the original <span class="pcrb7t-x-x-109">string</span>.
+     the original <span class="ec-lmtk-10x-x-109">string</span>.
      </p>
 </dd>
 <dt class="description">
  </dt>
 <dd class="description">
-<span class="cmbx-10x-x-109">compare</span>
-     <div class="fancyvrb" id="fancyvrb6">  <a id="x7-16041r1"></a><span class="pcrr7t-x-x-109"> </span><span class="pcrr7t-x-x-109"> function</span><span class="pcrr7t-x-x-109"> int</span><span class="pcrr7t-x-x-109"> compare(string</span><span class="pcrr7t-x-x-109"> s)</span>
+<span class="ecbx-1095">compare</span>
+     <div class="fancyvrb" id="fancyvrb6"> <a id="x7-16041r1"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> function</span><span class="ec-lmtt-10x-x-109"> int</span><span class="ec-lmtt-10x-x-109"> compare(string</span><span class="ec-lmtt-10x-x-109"> s)</span>
 </div>
-     <!--l. 221--><p class="noindent">Returns value of <span class="pcrb7t-x-x-109">ANSI C strcmp </span>function.
+     <!--l. 221--><p class="noindent">Returns value of <span class="ec-lmtk-10x-x-109">ANSI C strcmp </span>function.
      </p>
 </dd>
 <dt class="description">
  </dt>
 <dd class="description">
-<span class="cmbx-10x-x-109">icompare</span>
-     <div class="fancyvrb" id="fancyvrb7">  <a id="x7-16043r1"></a><span class="pcrr7t-x-x-109"> </span><span class="pcrr7t-x-x-109"> function</span><span class="pcrr7t-x-x-109"> int</span><span class="pcrr7t-x-x-109"> icompare(string</span><span class="pcrr7t-x-x-109"> s)</span>
+<span class="ecbx-1095">icompare</span>
+     <div class="fancyvrb" id="fancyvrb7"> <a id="x7-16043r1"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> function</span><span class="ec-lmtt-10x-x-109"> int</span><span class="ec-lmtt-10x-x-109"> icompare(string</span><span class="ec-lmtt-10x-x-109"> s)</span>
 </div>
-     <!--l. 227--><p class="noindent">Returns value of <span class="pcrb7t-x-x-109">ANSI C strcmp </span>function, but is case in-sensitive.
+     <!--l. 227--><p class="noindent">Returns value of <span class="ec-lmtk-10x-x-109">ANSI C strcmp </span>function, but is case in-sensitive.
      </p>
 </dd>
 <dt class="description">
  </dt>
 <dd class="description">
-<span class="cmbx-10x-x-109">substr</span>
-     <div class="fancyvrb" id="fancyvrb8">  <a id="x7-16045r1"></a><span class="pcrr7t-x-x-109"> </span><span class="pcrr7t-x-x-109"> function</span><span class="pcrr7t-x-x-109"> string</span><span class="pcrr7t-x-x-109"> substr(int</span><span class="pcrr7t-x-x-109"> i,</span><span class="pcrr7t-x-x-109"> int</span><span class="pcrr7t-x-x-109"> j)</span>
+<span class="ecbx-1095">substr</span>
+     <div class="fancyvrb" id="fancyvrb8"> <a id="x7-16045r1"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> function</span><span class="ec-lmtt-10x-x-109"> string</span><span class="ec-lmtt-10x-x-109"> substr(int</span><span class="ec-lmtt-10x-x-109"> i,</span><span class="ec-lmtt-10x-x-109"> int</span><span class="ec-lmtt-10x-x-109"> j)</span>
 </div>
-     <!--l. 234--><p class="noindent">Returns a new <span class="pcrb7t-x-x-109">string</span>that is a substring formed by characters in position
-     <span class="cmmi-10x-x-109">i </span>through <span class="cmmi-10x-x-109">j</span>. An empty-string is returned if either <span class="cmmi-10x-x-109">i &lt; </span>0 or <span class="cmmi-10x-x-109">j &lt; i </span>or
-     <span class="cmmi-10x-x-109">j &gt;</span>= <span class="cmmi-10x-x-109">str.len</span>().
+     <!--l. 234--><p class="noindent">Returns a new <span class="ec-lmtk-10x-x-109">string</span>that is a substring formed by characters in position <span class="cmmi-10x-x-109">i</span>
+     through <span class="cmmi-10x-x-109">j</span>. An empty-string is returned if either <span class="cmmi-10x-x-109">i &lt; </span><span class="cmr-10x-x-109">0 </span>or <span class="cmmi-10x-x-109">j &lt; i </span>or
+     <span class="cmmi-10x-x-109">j &gt;</span><span class="cmr-10x-x-109">= </span><span class="cmmi-10x-x-109">str.len</span><span class="cmr-10x-x-109">()</span>.
      </p>
 </dd>
 <dt class="description">
  </dt>
 <dd class="description">
-<span class="cmbx-10x-x-109">atoi, atohex, atooct, atobin, atoreal</span>
-     <div class="fancyvrb" id="fancyvrb9">  <a id="x7-16047r1"></a><span class="pcrr7t-x-x-109"> </span><span class="pcrr7t-x-x-109"> function</span><span class="pcrr7t-x-x-109"> integer</span><span class="pcrr7t-x-x-109"> atoi()</span><br class="fancyvrb"><a id="x7-16049r2"></a><span class="pcrr7t-x-x-109"> </span><span class="pcrr7t-x-x-109"> function</span><span class="pcrr7t-x-x-109"> integer</span><span class="pcrr7t-x-x-109"> atohex()</span>
-     <br class="fancyvrb"><a id="x7-16051r3"></a><span class="pcrr7t-x-x-109"> </span><span class="pcrr7t-x-x-109"> function</span><span class="pcrr7t-x-x-109"> integer</span><span class="pcrr7t-x-x-109"> atooct()</span><br class="fancyvrb"><a id="x7-16053r4"></a><span class="pcrr7t-x-x-109"> </span><span class="pcrr7t-x-x-109"> function</span><span class="pcrr7t-x-x-109"> integer</span><span class="pcrr7t-x-x-109"> atobin()</span>
-     <br class="fancyvrb"><a id="x7-16055r5"></a><span class="pcrr7t-x-x-109"> </span><span class="pcrr7t-x-x-109"> function</span><span class="pcrr7t-x-x-109"> real</span><span class="pcrr7t-x-x-109"> </span><span class="pcrr7t-x-x-109"> </span><span class="pcrr7t-x-x-109"> </span><span class="pcrr7t-x-x-109"> atoreal()</span>
+<span class="ecbx-1095">atoi, atohex, atooct, atobin, atoreal</span>
+     <div class="fancyvrb" id="fancyvrb9"> <a id="x7-16047r1"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> function</span><span class="ec-lmtt-10x-x-109"> integer</span><span class="ec-lmtt-10x-x-109"> atoi()</span><br class="fancyvrb"><a id="x7-16049r2"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> function</span><span class="ec-lmtt-10x-x-109"> integer</span><span class="ec-lmtt-10x-x-109"> atohex()</span><br class="fancyvrb"><a id="x7-16051r3"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> function</span><span class="ec-lmtt-10x-x-109"> integer</span><span class="ec-lmtt-10x-x-109"> atooct()</span>
+     <br class="fancyvrb"><a id="x7-16053r4"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> function</span><span class="ec-lmtt-10x-x-109"> integer</span><span class="ec-lmtt-10x-x-109"> atobin()</span><br class="fancyvrb"><a id="x7-16055r5"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> function</span><span class="ec-lmtt-10x-x-109"> real</span><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> atoreal()</span>
 </div>
      <!--l. 246--><p class="noindent">Returns the number after interpretting the string as either decimal,
      hexadecimal, octal, binary or real formats (respective functions). These
-     functions expect raw strings and are not <span class="pcrb7t-x-x-109">Verilog</span>integer literal compliant
-     (cannot interepret <span class="pcrb7t-x-x-109">Verilog</span>int literal).
+     functions expect raw strings and are not <span class="ec-lmtk-10x-x-109">Verilog</span>integer literal compliant
+     (cannot interepret <span class="ec-lmtk-10x-x-109">Verilog</span>int literal).
      </p>
 </dd>
 <dt class="description">
  </dt>
 <dd class="description">
-<span class="cmbx-10x-x-109">itoa, hextoa, octtoa, bintoa, realtoa</span>
-     <div class="fancyvrb" id="fancyvrb10">  <a id="x7-16057r1"></a><span class="pcrr7t-x-x-109"> </span><span class="pcrr7t-x-x-109"> task</span><span class="pcrr7t-x-x-109"> itoa(integer</span><span class="pcrr7t-x-x-109"> i)</span><br class="fancyvrb"><a id="x7-16059r2"></a><span class="pcrr7t-x-x-109"> </span><span class="pcrr7t-x-x-109"> task</span><span class="pcrr7t-x-x-109"> hextoa(integer</span><span class="pcrr7t-x-x-109"> i)</span>
-     <br class="fancyvrb"><a id="x7-16061r3"></a><span class="pcrr7t-x-x-109"> </span><span class="pcrr7t-x-x-109"> task</span><span class="pcrr7t-x-x-109"> octtoa(integer</span><span class="pcrr7t-x-x-109"> i)</span><br class="fancyvrb"><a id="x7-16063r4"></a><span class="pcrr7t-x-x-109"> </span><span class="pcrr7t-x-x-109"> task</span><span class="pcrr7t-x-x-109"> bintoa(integer</span><span class="pcrr7t-x-x-109"> i)</span><br class="fancyvrb"><a id="x7-16065r5"></a><span class="pcrr7t-x-x-109"> </span><span class="pcrr7t-x-x-109"> task</span><span class="pcrr7t-x-x-109"> realtoa(real</span><span class="pcrr7t-x-x-109"> r)</span>
+<span class="ecbx-1095">itoa, hextoa, octtoa, bintoa, realtoa</span>
+     <div class="fancyvrb" id="fancyvrb10"> <a id="x7-16057r1"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> task</span><span class="ec-lmtt-10x-x-109"> itoa(integer</span><span class="ec-lmtt-10x-x-109"> i)</span><br class="fancyvrb"><a id="x7-16059r2"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> task</span><span class="ec-lmtt-10x-x-109"> hextoa(integer</span><span class="ec-lmtt-10x-x-109"> i)</span><br class="fancyvrb"><a id="x7-16061r3"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> task</span><span class="ec-lmtt-10x-x-109"> octtoa(integer</span><span class="ec-lmtt-10x-x-109"> i)</span>
+     <br class="fancyvrb"><a id="x7-16063r4"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> task</span><span class="ec-lmtt-10x-x-109"> bintoa(integer</span><span class="ec-lmtt-10x-x-109"> i)</span><br class="fancyvrb"><a id="x7-16065r5"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> task</span><span class="ec-lmtt-10x-x-109"> realtoa(real</span><span class="ec-lmtt-10x-x-109"> r)</span>
 </div>
                                                                      
 
@@ -672,9 +676,9 @@ type.
      </p>
 </dd>
 </dl>
-<!--l. 103-->
+<!--l. 101-->
 </div>
-<!--l. 103--><p class="noindent"><a id="tailsvtutch5.html"></a>  
+<!--l. 101--><p class="noindent"><a id="tailsvtutch5.html"></a>  
 </p>
 <div id="rightlinks"><ul id="navigation"><li><a href="https://twitter.com/svtut2013"><img alt="Twitter" src="https://abs.twimg.com/a/1377795275/images/resources/twitter-bird-blue-on-white.png" height="50" width="50" title="Follow @svtut2013"></a></li></ul></div>
 </body>

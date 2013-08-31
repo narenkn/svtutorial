@@ -41,24 +41,25 @@
          C++,
          Verilog
  }
-%\DeclareCaptionFont{blue}{\color{blue}} 
 
-%\captionsetup[lstlisting]{singlelinecheck=false, labelfont={blue}, textfont={blue}}
-%% \usepackage{caption}
-%% \DeclareCaptionFont{white}{\color{white}}
-%% \DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35,
-%%     0.35,0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox{cyan}
+    {\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
 
-%% \captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white,
-%%   singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white,
+  singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
 
 %% New env for describing the code
-\newenvironment{tbldesc}{\ttfamily\tiny\selectfont}{\par}
+\newenvironment{tbldesc}{\ttfamily\footnotesize\selectfont}{\par}
 
 \usepackage{xspace}
-\usepackage{verbatim}
-\usepackage{fancyvrb}
 \usepackage{alltt}
+\usepackage{verbatim}
+\usepackage[table]{xcolor}
+\usepackage{fancyvrb}
+\usepackage[T1]{fontenc}
+\renewcommand{\ttdefault}{lmtt}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Note that book class by default is formatted to be printed back-to-back.
