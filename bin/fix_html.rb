@@ -116,7 +116,16 @@ div['id'] = 'rightlinks'
 ul  = Nokogiri::XML::Node.new('ul',  doc)
 ul['id'] = 'navigation'
 li  = Nokogiri::XML::Node.new('li',  doc)
-li.inner_html = '<a href="https://twitter.com/svtut2013"><img alt="Twitter" src="https://abs.twimg.com/a/1377795275/images/resources/twitter-bird-blue-on-white.png" height="50" width="50" title="Follow @svtut2013" /></a>'
+li.inner_html = '<a href="https://twitter.com/svtut2013"><img alt="Twitter" src="https://abs.twimg.com/a/1377795275/images/resources/twitter-bird-blue-on-white.png" height="25" width="25" title="Follow @svtut2013" /></a>'
+ul << li
+li = Nokogiri::XML::Node.new('li', doc)
+li.inner_html = '<a href="http://feeds.feedburner.com/svtut2013"><img alt="Feeds" src="img/RSS.png" height="25" width="25" title="Get news updates via RSS" /></a></td>'
+ul << li
+li = Nokogiri::XML::Node.new('li', doc)
+li.inner_html = '<a href="http://feedburner.google.com/fb/a/mailverify?uri=svtut2013&amp;loc=en_US"><img alt="Mail" src="img/mail.gif" height="25" width="25" title="Get news updates by email" /></a></td>'
+ul << li
+li = Nokogiri::XML::Node.new('li', doc)
+li.inner_html = '<a href="http://www.facebook.com/pages/Svtut2013/419909814797134"><img alt="FB" src="img/fb.png" height="25" width="25" title="Become a fan on Facebook" /></a></td>'
 ul << li
 div << ul
 body << div

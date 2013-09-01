@@ -169,6 +169,7 @@ div.lstinputlisting{ font-family: monospace; white-space: nowrap; }
 div.verbatiminput {font-family: monospace; white-space: nowrap; }
 P.fancyvrb {white-space: nowrap; margin:0em;}
 tr#TBL-3-2-{background-color:}
+ #TBL-4-1-{ background-color:#00FFFF}
 div#fancyvrb1{ color: blue; }
 div#fancyvrb1{ background-color: #00FFFF;}
 div#fancyvrb2{ color: blue; }
@@ -228,8 +229,8 @@ body {
 }
 
 #rightlinks {
-    background-color:#262626;
-    width:15%;
+//    background-color:#262626;
+    width:20%;
     position:fixed;
     right:2%;
     bottom:10%;
@@ -346,11 +347,16 @@ img {
     background-color: cyan;
 }
 
+.lstlisting {
+    font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
+    font-size: 12px;
+}
+
 .verbatim {
     font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
     color: black;
     background-color: #FFFF66;
-    font-size: 8px;
+    font-size: 10px;
 }
 
 .label {
