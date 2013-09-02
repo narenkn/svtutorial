@@ -1,0 +1,39 @@
+\rowcolors{1}{}{yellow!25}
+\begin{table}
+\begin{tabular}{p\textwidth}
+\begin{lstlisting}[label=lst!literal!string, caption=String Literal
+    Examples]
+
+\end{lstlisting}
+\\
+\begin{tbldesc}
+\begin{verbatim}
+
+\end{verbatim}
+\end{tbldesc}
+\end{tabular}
+\end{table}
+\rowcolors{1}{}{}
+
+
+
+
+
+\rowcolors{1}{}{yellow!25}
+\begin{table}
+\begin{tabular}{p{0.35\textwidth} p{0.65\textwidth}}
+
+\begin{Verbatim}
+
+\end{Verbatim}
+&
+\begin{tbldesc}
+\begin{verbatim}
+
+\end{verbatim}
+\end{tbldesc}
+
+
+\end{tabular}
+\end{table}
+\rowcolors{1}{}{}

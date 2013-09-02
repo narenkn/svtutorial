@@ -261,3 +261,219 @@ Family of method to store the ASCII real representation of argument
 into the string in the implied format.
 
 \end{description}
+
+
+
+\section{event}
+\kwevent data-type is enhanced over \lvlog's definition of the same.
+
+\rowcolors{1}{}{yellow!25}
+\begin{table}
+\begin{tabular}{p{0.35\textwidth} p{0.65\textwidth}}
+
+\begin{Verbatim}
+event e1, e2;
+e1 = e2;
+e1 - null;
+\end{Verbatim}
+&
+\begin{tbldesc}
+\begin{verbatim}
+event variables could be assigned to each other or null.
+After declaration both e1 and e2 are distinct event
+objects capable handling distinct simulation events.
+When e1 is assigned from e2, e1's object is lost and
+both are referencing to the same object that was e2.
+When e1 is assigned to 'null', there exists no event
+object for this and all threads waiting on e1 would
+never be triggered further.
+\end{verbatim}
+\end{tbldesc}
+
+\end{tabular}
+\end{table}
+\rowcolors{1}{}{}
+
+
+\section{User-Defined-types}
+As in \lc, \lvlog also provides \kwtypedef constructs that creates new
+data-types. They exhibit scoping rules as in \lcpp 
+
+\rowcolors{1}{}{yellow!25}
+\begin{table}
+\begin{tabular}{p{0.35\textwidth} p{0.65\textwidth}}
+
+\begin{Verbatim}
+typedef int IntP;
+IntP    ia, ib;
+
+typedef foo;
+foo f = 1;
+typedef int foo;
+\end{Verbatim}
+&
+\begin{tbldesc}
+\begin{verbatim}
+In the first block, two 'int' variables ia, ib are created as
+user-defined type.
+In the second block, deferred declaration of variable 'f'
+occurs. This feature is usefull to overcome circular
+declarations.
+\end{verbatim}
+\end{tbldesc}
+\\
+\begin{Verbatim}
+interface intf_i;
+  typedef int data_t;
+endinterface
+
+module sub(intf_i p);
+  typedef p.data_t my_data_t;
+  my_data_t data;
+endmodule
+\end{Verbatim}
+&
+\begin{tbldesc}
+\begin{verbatim}
+User-defined data-types have same scoping rules as variables.
+They can be accessed via hierarchial scope specifier as
+shown in tis example.
+\end{verbatim}
+\end{tbldesc}
+
+\end{tabular}
+\end{table}
+\rowcolors{1}{}{}
+
+
+\section{enum}
+Enumerated types define a set of named constants of any
+type. Enumerated variable names could be declared in singular or as an
+array and could have a constant to be initialized with. Valid
+specification include
+\verb|name, name=C, name[N], name[N]=C, name[M:N], name[M:N]=C|, where
+$N, M$ are positive integer constants. When declared as an array, an
+array of enumerated constants are created with incrementing values
+starting with the provided constant $C$ or previous value as
+applicable. Names are suffixed with the number like
+\verb|name0, name1| etc\ldots. Range of enumerations are $0..N-1$ or
+$M..N$ as applicable.
+
+Enumerated variables are strongly typed and need a cast to be assigned
+if not assigned from the enumerated constant itself. The cast does a
+dynamic value check and asserts error when value is outside the
+enumeration's range. When used in expressions they take their literal
+value and act like literal constants.
+
+Enumerated variable names should be unique in the scope of its
+existence wherous the values should be unique within itself. Values
+could be overlapping with other enumerated types and is not of
+concern.
+
+\rowcolors{1}{}{yellow!25}
+\begin{table}
+\begin{tabular}{p{0.35\textwidth} p{0.65\textwidth}}
+
+\begin{Verbatim}
+enum {red, yellow, green=3} light1, light2;
+enum {IDLE, XX='x, S1=2'b01, S2=2'b10} state, next;
+enum integer {IDLE, XX='x, S1=2'b01, S2=2'b10} state, next;
+\end{Verbatim}
+&
+\begin{tbldesc}
+\begin{verbatim}
+light1, light2 are of int data type since type is 
+not specified by default.
+Declaration could value constants to which they
+represent. 'red' has a value of 0, 'yellow' has
+a value of 1 and so on. 'green' has a value 3
+as it is specified that way.
+It is an error in next line when literal 'x is
+attempted to assigned, when no data type is specified
+as the default data type is 'int'. The correct way
+for such a declaration is as shown in the last line.
+\end{verbatim}
+\end{tbldesc}
+\\
+\begin{Verbatim}
+enum {bronze=3, silver, gold} medal;
+enum {a, b=7, c, d=8} alphabet;
+enum bit[2:0] {oa=1, ob=7, oc} alpha1;
+\end{Verbatim}
+&
+\begin{tbldesc}
+\begin{verbatim}
+'silver' takes value 4 and 'gold' takes 5 as every
+next value is obtained by incrementing the previous
+value when not specified.
+'a' takes value 0. 'c' and 'd' both would take the
+value 8, and hence it would be an error.
+When value of 'oc' is computed it is overflown, and
+hence it would be an error.
+\end{verbatim}
+\end{tbldesc}
+\\
+\begin{Verbatim}
+
+\end{Verbatim}
+&
+\begin{tbldesc}
+\begin{verbatim}
+
+\end{verbatim}
+\end{tbldesc}
+\\
+\begin{Verbatim}
+typedef enum {NO, YES} boolean;
+boolean myvar;
+\end{Verbatim}
+&
+\begin{tbldesc}
+\begin{verbatim}
+'boolean' is an enumerated type and so it could
+be used in multiple places.
+\end{verbatim}
+\end{tbldesc}
+\\
+\begin{Verbatim}
+typedef enum { add=10, sub[5], jmp[6:8] } E1;
+\end{Verbatim}
+&
+\begin{tbldesc}
+\begin{verbatim}
+Following enumerated values are objtained {add=10,
+sub0=11, sub1=12, sub2=13, sub3=14, sub4=15, jmp[6]
+=16, jmp[7]=17, jmp[8]=18}
+\end{verbatim}
+\end{tbldesc}
+\\
+\begin{Verbatim}
+typedef enum {red, green, blue} Colors;
+int a;
+Colors c;
+c = green;
+c = 1;
+c = Colors'(1);
+a = c;
+c++;
+c+=2;
+\end{Verbatim}
+&
+\begin{tbldesc}
+\begin{verbatim}
+In this example the assignment 'c=1' generates an error
+as it is invalid to assign a non-enumerated value to
+enumerated variable. The correct assignment is shown in
+the next line. When assigned to a int, it gets type-cast
+into int-literal automatically. They could also be used
+in expressions where corresponding literal constants
+could be used.
+Both expressions 'c++' and 'c+=2' are illegal as they
+contain assignment without type-value checking.
+\end{verbatim}
+\end{tbldesc}
+
+
+\end{tabular}
+\end{table}
+\rowcolors{1}{}{}
