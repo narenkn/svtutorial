@@ -415,19 +415,13 @@ hence it would be an error.
 \end{tbldesc}
 \\
 \begin{Verbatim}
-enum bit [3:0] {bronze='h3, silver, gold='h5} medal4;
-enum bit [3:0] {bronze=4'h3, silver, gold=4'h5} medal4;
-enum bit [3:0] {bronze=5'h13, silver, gold=3'h5} medal4;
-enum bit [0:0] {a,b,c} alphabet;
+enum bit [3:0] {bronze='h3, silver, gold='h5} medal14;
+
 \end{Verbatim}
 \\
 \begin{tbldesc}
 \begin{verbatim}
-Line 1: Valid. Assignment of unsized value.
-Line 2: Valid. bronze and gold sizes are redundant
-Line 3: Error in the bronze and gold member
-declarations, as size of bit-vector doesn't match
-Line 4: overflow in value, needs to be 2 bits
+
 \end{verbatim}
 \end{tbldesc}
 \\
