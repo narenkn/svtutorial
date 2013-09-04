@@ -677,6 +677,308 @@ type.
      </p>
 </dd>
 </dl>
+<h3 class="sectionHead">
+<span class="titlemark">2.6   </span> <a id="x7-170002.6"></a>event</h3>
+<!--l. 268--><p class="noindent"><span class="ec-lmtk-10x-x-109">event</span>data-type is enhanced over <span class="ec-lmtk-10x-x-109">Verilog</span>&#8217;s definition of the same.
+</p>
+<div class="table">
+                                                                     
+
+                                                                     
+<!--l. 272--><p class="noindent"></p>
+<hr class="float">
+<div class="float">
+                                                                     
+
+                                                                     
+<div class="tabular"> <table id="TBL-6" class="tabular" cellspacing="0" cellpadding="0">
+<colgroup id="TBL-6-1g">
+<col id="TBL-6-1">
+<col id="TBL-6-2">
+</colgroup>
+<tr style="vertical-align:baseline;" id="TBL-6-1-">
+<td style="white-space:wrap; text-align:left;" id="TBL-6-1-1" class="td11">
+ <div class="fancyvrb" id="fancyvrb11">
+<a id="x7-17002r1"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> event</span><span class="ec-lmtt-10x-x-109"> e1,</span><span class="ec-lmtt-10x-x-109"> e2;</span><br class="fancyvrb"><a id="x7-17004r2"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> e1</span><span class="ec-lmtt-10x-x-109"> =</span><span class="ec-lmtt-10x-x-109"> e2;</span>
+ <br class="fancyvrb"><a id="x7-17006r3"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> e1</span><span class="ec-lmtt-10x-x-109"> -</span><span class="ec-lmtt-10x-x-109"> null;</span>
+</div>
+ <!--l. 279--><p class="noindent">                       </p>
+</td>
+<td style="white-space:wrap; text-align:left;" id="TBL-6-1-2" class="td11"> <div class="verbatim" id="verbatim-4">
+ event variables could be assigned to each other or null.
+  <br>After declaration both e1 and e2 are distinct event
+  <br>objects capable handling distinct simulation events.
+  <br>When e1 is assigned from e2, e1&#8217;s object is lost and
+  <br>both are referencing to the same object that was e2.
+  <br>When e1 is assigned to &#8217;null&#8217;, there exists no event
+  <br>object for this and all threads waiting on e1 would
+  <br>never be triggered further. 
+</div>
+<!--l. 290--><p class="nopar">                                                   </p>
+</td>
+</tr>
+</table>
+</div>
+                                                                     
+
+                                                                     
+</div>
+<hr class="endfloat">
+</div>
+<h3 class="sectionHead">
+<span class="titlemark">2.7   </span> <a id="x7-180002.7"></a>User-Defined-types</h3>
+<!--l. 299--><p class="noindent">As in <span class="ec-lmtk-10x-x-109">C</span>, <span class="ec-lmtk-10x-x-109">Verilog</span>also provides <span class="ec-lmtk-10x-x-109">typedef</span>constructs that creates new data-types.
+They exhibit scoping rules as in <span class="ec-lmtk-10x-x-109">C++</span>
+</p>
+<div class="table">
+                                                                     
+
+                                                                     
+<!--l. 304--><p class="noindent"></p>
+<hr class="float">
+<div class="float">
+                                                                     
+
+                                                                     
+<div class="tabular"> <table id="TBL-7" class="tabular" cellspacing="0" cellpadding="0">
+<colgroup id="TBL-7-1g">
+<col id="TBL-7-1">
+<col id="TBL-7-2">
+</colgroup>
+<tr style="vertical-align:baseline;" id="TBL-7-1-">
+<td style="white-space:wrap; text-align:left;" id="TBL-7-1-1" class="td11">
+ <div class="fancyvrb" id="fancyvrb12">
+<a id="x7-18002r1"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> typedef</span><span class="ec-lmtt-10x-x-109"> int</span><span class="ec-lmtt-10x-x-109"> IntP;</span>
+ <br class="fancyvrb"><a id="x7-18004r2"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> IntP</span><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> ia,</span><span class="ec-lmtt-10x-x-109"> ib;</span><br class="fancyvrb"><a id="x7-18006r3"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> </span>
+ <br class="fancyvrb"><a id="x7-18008r4"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> typedef</span><span class="ec-lmtt-10x-x-109"> foo;</span><br class="fancyvrb"><a id="x7-18010r5"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> foo</span><span class="ec-lmtt-10x-x-109"> f</span><span class="ec-lmtt-10x-x-109"> =</span><span class="ec-lmtt-10x-x-109"> 1;</span>
+ <br class="fancyvrb"><a id="x7-18012r6"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> typedef</span><span class="ec-lmtt-10x-x-109"> int</span><span class="ec-lmtt-10x-x-109"> foo;</span>
+</div>
+ <!--l. 314--><p class="noindent">                       </p>
+</td>
+<td style="white-space:wrap; text-align:left;" id="TBL-7-1-2" class="td11"> <div class="verbatim" id="verbatim-5">
+ In the first block, two &#8217;int&#8217; variables ia, ib are created as
+  <br>user-defined type.
+  <br>In the second block, deferred declaration of variable &#8217;f&#8217;
+  <br>occurs. This feature is usefull to overcome circular
+  <br>declarations. 
+</div>
+<!--l. 322--><p class="nopar">
+<!--l. 325--></p>
+<p class="noindent">                                                   </p>
+</td>
+
+</tr>
+<tr style="vertical-align:baseline;" id="TBL-7-2-">
+<td style="white-space:wrap; text-align:left;" id="TBL-7-2-1" class="td11">
+ <div class="fancyvrb" id="fancyvrb13">
+<a id="x7-18014r1"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> interface</span><span class="ec-lmtt-10x-x-109"> intf_i;</span>
+ <br class="fancyvrb"><a id="x7-18016r2"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> typedef</span><span class="ec-lmtt-10x-x-109"> int</span><span class="ec-lmtt-10x-x-109"> data_t;</span>
+ <br class="fancyvrb"><a id="x7-18018r3"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> endinterface</span><br class="fancyvrb"><a id="x7-18020r4"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> </span>
+ <br class="fancyvrb"><a id="x7-18022r5"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> module</span><span class="ec-lmtt-10x-x-109"> sub(intf_i</span><span class="ec-lmtt-10x-x-109"> p);</span>
+ <br class="fancyvrb"><a id="x7-18024r6"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> typedef</span><span class="ec-lmtt-10x-x-109"> p.data_t</span><span class="ec-lmtt-10x-x-109"> my_data_t;</span>
+ <br class="fancyvrb"><a id="x7-18026r7"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> my_data_t</span><span class="ec-lmtt-10x-x-109"> data;</span><br class="fancyvrb"><a id="x7-18028r8"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> endmodule</span>
+</div>
+ <!--l. 335--><p class="noindent">                        </p>
+</td>
+<td style="white-space:wrap; text-align:left;" id="TBL-7-2-2" class="td11"> <div class="verbatim" id="verbatim-6">
+ User-defined data-types have same scoping rules as variables.
+  <br>They can be accessed via hierarchial scope specifier as
+  <br>shown in tis example. 
+</div>
+<!--l. 341--><p class="nopar">                                                   </p>
+</td>
+</tr>
+</table>
+</div>
+                                                                     
+
+                                                                     
+</div>
+<hr class="endfloat">
+</div>
+<h3 class="sectionHead">
+<span class="titlemark">2.8   </span> <a id="x7-190002.8"></a>enum</h3>
+<!--l. 350--><p class="noindent">Enumerated types define a set of named constants of any type. Enumerated
+variable names could be declared in singular or as an array and could
+have a constant to be initialized with. Valid specification include
+<span class="obeylines-h"><span class="verb"><span class="ec-lmtt-10x-x-109">name,</span><span class="ec-lmtt-10x-x-109"> name=C,</span><span class="ec-lmtt-10x-x-109"> name[N],</span><span class="ec-lmtt-10x-x-109"> name[N]=C,</span><span class="ec-lmtt-10x-x-109"> name[M:N],</span><span class="ec-lmtt-10x-x-109"> name[M:N]=C</span></span></span>, where <span class="cmmi-10x-x-109">N,M</span>
+are positive integer constants. When declared as an array, an array of enumerated
+constants are created with incrementing values starting with the provided
+constant <span class="cmmi-10x-x-109">C </span>or previous value as applicable. Names are suffixed with the number
+like <span class="obeylines-h"><span class="verb"><span class="ec-lmtt-10x-x-109">name0,</span><span class="ec-lmtt-10x-x-109"> name1</span></span></span> etc&#8230;. Range of enumerations are <span class="cmr-10x-x-109">0</span><span class="cmmi-10x-x-109">..N </span><span class="cmsy-10x-x-109">- </span><span class="cmr-10x-x-109">1 </span>or <span class="cmmi-10x-x-109">M..N </span>as
+applicable.
+<!--l. 362--></p>
+<p class="noindent">Enumerated variables are strongly typed and need a cast to be assigned if not
+assigned from the enumerated constant itself. The cast does a dynamic value
+check and asserts error when value is outside the enumeration&#8217;s range.
+When used in expressions they take their literal value and act like literal
+constants.
+<!--l. 368--></p>
+<p class="noindent">Enumerated variable names should be unique in the scope of its existence
+wherous the values should be unique within itself. Values could be overlapping
+with other enumerated types and is not of concern.
+</p>
+<div class="table">
+                                                                     
+
+                                                                     
+<!--l. 375--><p class="noindent"></p>
+<hr class="float">
+<div class="float">
+                                                                     
+
+                                                                     
+                                                                     
+
+                                                                     
+<div class="tabular"> <table id="TBL-8" class="tabular" cellspacing="0" cellpadding="0">
+<colgroup id="TBL-8-1g">
+<col id="TBL-8-1">
+<col id="TBL-8-2">
+</colgroup>
+<tr style="vertical-align:baseline;" id="TBL-8-1-">
+<td style="white-space:wrap; text-align:left;" id="TBL-8-1-1" class="td11">
+ <div class="fancyvrb" id="fancyvrb14">
+<a id="x7-19002r1"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> enum</span><span class="ec-lmtt-10x-x-109"> {red,</span><span class="ec-lmtt-10x-x-109"> yellow,</span><span class="ec-lmtt-10x-x-109"> green=3}</span><span class="ec-lmtt-10x-x-109"> light1,</span><span class="ec-lmtt-10x-x-109"> light2;</span>
+ <br class="fancyvrb"><a id="x7-19004r2"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> enum</span><span class="ec-lmtt-10x-x-109"> {IDLE,</span><span class="ec-lmtt-10x-x-109"> XX=&#8217;x,</span><span class="ec-lmtt-10x-x-109"> S1=2&#8217;b01,</span><span class="ec-lmtt-10x-x-109"> S2=2&#8217;b10}</span><span class="ec-lmtt-10x-x-109"> state,</span><span class="ec-lmtt-10x-x-109"> next;</span>
+ <br class="fancyvrb"><a id="x7-19006r3"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> enum</span><span class="ec-lmtt-10x-x-109"> integer</span><span class="ec-lmtt-10x-x-109"> {IDLE,</span><span class="ec-lmtt-10x-x-109"> XX=&#8217;x,</span><span class="ec-lmtt-10x-x-109"> S1=2&#8217;b01,</span><span class="ec-lmtt-10x-x-109"> S2=2&#8217;b10}</span><span class="ec-lmtt-10x-x-109"> state,</span><span class="ec-lmtt-10x-x-109"> next;</span>
+</div>
+ <!--l. 382--><p class="noindent">                       </p>
+</td>
+<td style="white-space:wrap; text-align:left;" id="TBL-8-1-2" class="td11"> <div class="verbatim" id="verbatim-7">
+ light1, light2 are of int data type since type is
+  <br>not specified by default.
+  <br>Declaration could value constants to which they
+  <br>represent. &#8217;red&#8217; has a value of 0, &#8217;yellow&#8217; has
+  <br>a value of 1 and so on. &#8217;green&#8217; has a value 3
+  <br>as it is specified that way.
+  <br>It is an error in next line when literal &#8217;x is
+  <br>attempted to assigned, when no data type is specified
+  <br>as the default data type is &#8217;int&#8217;. The correct way
+  <br>for such a declaration is as shown in the last line. 
+</div>
+<!--l. 395--><p class="nopar">
+<!--l. 398--></p>
+<p class="noindent">                                                   </p>
+</td>
+</tr>
+<tr style="vertical-align:baseline;" id="TBL-8-2-">
+<td style="white-space:wrap; text-align:left;" id="TBL-8-2-1" class="td11">
+ <div class="fancyvrb" id="fancyvrb15">
+<a id="x7-19008r1"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> enum</span><span class="ec-lmtt-10x-x-109"> {bronze=3,</span><span class="ec-lmtt-10x-x-109"> silver,</span><span class="ec-lmtt-10x-x-109"> gold}</span><span class="ec-lmtt-10x-x-109"> medal;</span>
+ <br class="fancyvrb"><a id="x7-19010r2"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> enum</span><span class="ec-lmtt-10x-x-109"> {a,</span><span class="ec-lmtt-10x-x-109"> b=7,</span><span class="ec-lmtt-10x-x-109"> c,</span><span class="ec-lmtt-10x-x-109"> d=8}</span><span class="ec-lmtt-10x-x-109"> alphabet;</span>
+ <br class="fancyvrb"><a id="x7-19012r3"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> enum</span><span class="ec-lmtt-10x-x-109"> bit[2:0]</span><span class="ec-lmtt-10x-x-109"> {oa=1,</span><span class="ec-lmtt-10x-x-109"> ob=7,</span><span class="ec-lmtt-10x-x-109"> oc}</span><span class="ec-lmtt-10x-x-109"> alpha1;</span>
+</div>
+ <!--l. 403--><p class="noindent">                        </p>
+</td>
+<td style="white-space:wrap; text-align:left;" id="TBL-8-2-2" class="td11"> <div class="verbatim" id="verbatim-8">
+ &#8217;silver&#8217; takes value 4 and &#8217;gold&#8217; takes 5 as every
+  <br>next value is obtained by incrementing the previous
+  <br>value when not specified.
+  <br>&#8217;a&#8217; takes value 0. &#8217;c&#8217; and &#8217;d&#8217; both would take the
+  <br>value 8, and hence it would be an error.
+  <br>When value of &#8217;oc&#8217; is computed it is overflown, and
+  <br>hence it would be an error. 
+</div>
+<!--l. 413--><p class="nopar">
+<!--l. 416--></p>
+<p class="noindent">                                                   </p>
+</td>
+</tr>
+<tr style="vertical-align:baseline;" id="TBL-8-3-">
+<td style="white-space:wrap; text-align:left;" id="TBL-8-3-1" class="td11">
+ <div class="fancyvrb" id="fancyvrb16">
+<a id="x7-19014r1"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> enum</span><span class="ec-lmtt-10x-x-109"> bit</span><span class="ec-lmtt-10x-x-109"> [3:0]</span><span class="ec-lmtt-10x-x-109"> {bronze=&#8217;h3,</span><span class="ec-lmtt-10x-x-109"> silver,</span><span class="ec-lmtt-10x-x-109"> gold=&#8217;h5}</span><span class="ec-lmtt-10x-x-109"> medal4;</span>
+ <br class="fancyvrb"><a id="x7-19016r2"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> enum</span><span class="ec-lmtt-10x-x-109"> bit</span><span class="ec-lmtt-10x-x-109"> [3:0]</span><span class="ec-lmtt-10x-x-109"> {bronze=4&#8217;h3,</span><span class="ec-lmtt-10x-x-109"> silver,</span><span class="ec-lmtt-10x-x-109"> gold=4&#8217;h5}</span><span class="ec-lmtt-10x-x-109"> medal4;</span>
+ <br class="fancyvrb"><a id="x7-19018r3"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> enum</span><span class="ec-lmtt-10x-x-109"> bit</span><span class="ec-lmtt-10x-x-109"> [3:0]</span><span class="ec-lmtt-10x-x-109"> {bronze=5&#8217;h13,</span><span class="ec-lmtt-10x-x-109"> silver,</span><span class="ec-lmtt-10x-x-109"> gold=3&#8217;h5}</span><span class="ec-lmtt-10x-x-109"> medal4;</span>
+ <br class="fancyvrb"><a id="x7-19020r4"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> enum</span><span class="ec-lmtt-10x-x-109"> bit</span><span class="ec-lmtt-10x-x-109"> [0:0]</span><span class="ec-lmtt-10x-x-109"> {a,b,c}</span><span class="ec-lmtt-10x-x-109"> alphabet;</span>
+</div>
+ <!--l. 422--><p class="noindent">                        </p>
+</td>
+<td style="white-space:wrap; text-align:left;" id="TBL-8-3-2" class="td11"> <div class="verbatim" id="verbatim-9">
+ Line 1: Valid. Assignment of unsized value.
+  <br>Line 2: Valid. bronze and gold sizes are redundant
+  <br>Line 3: Error in the bronze and gold member
+  <br>declarations, as size of bit-vector doesn&#8217;t match
+  <br>Line 4: overflow in value, needs to be 2 bits 
+</div>
+<!--l. 430--><p class="nopar">
+<!--l. 433--></p>
+<p class="noindent">                                                   </p>
+</td>
+
+</tr>
+<tr style="vertical-align:baseline;" id="TBL-8-4-">
+<td style="white-space:wrap; text-align:left;" id="TBL-8-4-1" class="td11">
+ <div class="fancyvrb" id="fancyvrb17">
+<a id="x7-19022r1"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> typedef</span><span class="ec-lmtt-10x-x-109"> enum</span><span class="ec-lmtt-10x-x-109"> {NO,</span><span class="ec-lmtt-10x-x-109"> YES}</span><span class="ec-lmtt-10x-x-109"> boolean;</span>
+ <br class="fancyvrb"><a id="x7-19024r2"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> boolean</span><span class="ec-lmtt-10x-x-109"> myvar;</span>
+</div>
+ <!--l. 437--><p class="noindent">                        </p>
+</td>
+<td style="white-space:wrap; text-align:left;" id="TBL-8-4-2" class="td11"> <div class="verbatim" id="verbatim-10">
+ &#8217;boolean&#8217; is an enumerated type and so it could
+  <br>be used in multiple places. 
+</div>
+<!--l. 442--><p class="nopar">
+<!--l. 445--></p>
+<p class="noindent">                                                   </p>
+</td>
+</tr>
+<tr style="vertical-align:baseline;" id="TBL-8-5-">
+<td style="white-space:wrap; text-align:left;" id="TBL-8-5-1" class="td11">
+ <div class="fancyvrb" id="fancyvrb18">
+<a id="x7-19026r1"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> typedef</span><span class="ec-lmtt-10x-x-109"> enum</span><span class="ec-lmtt-10x-x-109"> {</span><span class="ec-lmtt-10x-x-109"> add=10,</span><span class="ec-lmtt-10x-x-109"> sub[5],</span><span class="ec-lmtt-10x-x-109"> jmp[6:8]</span><span class="ec-lmtt-10x-x-109"> }</span><span class="ec-lmtt-10x-x-109"> E1;</span>
+</div>
+ <!--l. 448--><p class="noindent">                        </p>
+</td>
+<td style="white-space:wrap; text-align:left;" id="TBL-8-5-2" class="td11"> <div class="verbatim" id="verbatim-11">
+ Following enumerated values are objtained {add=10,
+  <br>sub0=11, sub1=12, sub2=13, sub3=14, sub4=15, jmp[6]
+  <br>=16, jmp[7]=17, jmp[8]=18} 
+</div>
+<!--l. 454--><p class="nopar">
+<!--l. 457--></p>
+<p class="noindent">                                                   </p>
+</td>
+
+</tr>
+<tr style="vertical-align:baseline;" id="TBL-8-6-">
+<td style="white-space:wrap; text-align:left;" id="TBL-8-6-1" class="td11">
+ <div class="fancyvrb" id="fancyvrb19">
+<a id="x7-19028r1"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> typedef</span><span class="ec-lmtt-10x-x-109"> enum</span><span class="ec-lmtt-10x-x-109"> {red,</span><span class="ec-lmtt-10x-x-109"> green,</span><span class="ec-lmtt-10x-x-109"> blue}</span><span class="ec-lmtt-10x-x-109"> Colors;</span>
+ <br class="fancyvrb"><a id="x7-19030r2"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> int</span><span class="ec-lmtt-10x-x-109"> a;</span><br class="fancyvrb"><a id="x7-19032r3"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> Colors</span><span class="ec-lmtt-10x-x-109"> c;</span>
+ <br class="fancyvrb"><a id="x7-19034r4"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> c</span><span class="ec-lmtt-10x-x-109"> =</span><span class="ec-lmtt-10x-x-109"> green;</span><br class="fancyvrb"><a id="x7-19036r5"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> c</span><span class="ec-lmtt-10x-x-109"> =</span><span class="ec-lmtt-10x-x-109"> 1;</span>
+ <br class="fancyvrb"><a id="x7-19038r6"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> c</span><span class="ec-lmtt-10x-x-109"> =</span><span class="ec-lmtt-10x-x-109"> Colors&#8217;(1);</span><br class="fancyvrb"><a id="x7-19040r7"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> a</span><span class="ec-lmtt-10x-x-109"> =</span><span class="ec-lmtt-10x-x-109"> c;</span>
+ <br class="fancyvrb"><a id="x7-19042r8"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> c++;</span><br class="fancyvrb"><a id="x7-19044r9"></a><span class="ec-lmtt-10x-x-109"> </span><span class="ec-lmtt-10x-x-109"> c+=2;</span>
+</div>
+ <!--l. 468--><p class="noindent">                        </p>
+</td>
+<td style="white-space:wrap; text-align:left;" id="TBL-8-6-2" class="td11"> <div class="verbatim" id="verbatim-12">
+ In this example the assignment &#8217;c=1&#8217; generates an error
+  <br>as it is invalid to assign a non-enumerated value to
+  <br>enumerated variable. The correct assignment is shown in
+  <br>the next line. When assigned to a int, it gets type-cast
+  <br>into int-literal automatically. They could also be used
+  <br>in expressions where corresponding literal constants
+  <br>could be used.
+  <br>Both expressions &#8217;c++&#8217; and &#8217;c+=2&#8217; are illegal as they
+  <br>contain assignment without type-value checking. 
+</div>
+<!--l. 480--><p class="nopar">                                                   </p>
+</td>
+</tr>
+</table>
+</div>
+                                                                     
+
+                                                                     
+</div>
+<hr class="endfloat">
+</div>
+                                                                     
+
+                                                                     
 <!--l. 101-->
 </div>
 <!--l. 101--><p class="noindent"><a id="tailsvtutch5.html"></a>  
