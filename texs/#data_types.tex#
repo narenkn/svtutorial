@@ -415,6 +415,7 @@ hence it would be an error.
 \end{tbldesc}
 \\
 \begin{Verbatim}
+enum bit [3:0] {bronze='h3, silver, gold='h5} medal14;
 
 \end{Verbatim}
 \\
