@@ -371,91 +371,66 @@ existence wherous the values should be unique within itself. Values
 could be overlapping with other enumerated types and is not of
 concern.
 
-\rowcolors{1}{}{yellow!25}
-\begin{table}
-\begin{tabular}{p{0.95\textwidth}}
-
-\begin{Verbatim}
+\begin{lstlisting}[label=lst!literal!enum1, caption=Enum Declaration
+    Example]
 enum {red, yellow, green=3} light1, light2;
 enum {IDLE, XX='x, S1=2'b01, S2=2'b10} state, next;
 enum integer {IDLE, XX='x, S1=2'b01, S2=2'b10} state, next;
-\end{Verbatim}
-\\
-\begin{tbldesc}
-\begin{verbatim}
-light1, light2 are of int data type since type is 
-not specified by default.
-Declaration could value constants to which they
-represent. 'red' has a value of 0, 'yellow' has
-a value of 1 and so on. 'green' has a value 3
-as it is specified that way.
-It is an error in next line when literal 'x is
-attempted to assigned, when no data type is specified
-as the default data type is 'int'. The correct way
+\end{lstlisting}
+
+light1, light2 are of int data type since type is not specified by
+default.  Declaration could value constants to which they
+represent. 'red' has a value of 0, 'yellow' has a value of 1 and so
+on. 'green' has a value 3 as it is specified that way.  It is an error
+in next line when literal 'x is attempted to assigned, when no data
+type is specified as the default data type is 'int'. The correct way
 for such a declaration is as shown in the last line.
-\end{verbatim}
-\end{tbldesc}
-\\
-\begin{Verbatim}
+
+\begin{lstlisting}[label=lst!literal!enum2, caption=Enum Declaration
+    Examples]
 enum {bronze=3, silver, gold} medal;
 enum {a, b=7, c, d=8} alphabet;
 enum bit[2:0] {oa=1, ob=7, oc} alpha1;
-\end{Verbatim}
-\\
-\begin{tbldesc}
-\begin{verbatim}
-'silver' takes value 4 and 'gold' takes 5 as by
-default every value is obtained by incrementing
-the previous value when not specified.
-'a' takes value 0. 'c' and 'd' both would take the
-value 8, and hence it would be an error.
-When value of 'oc' is computed it is overflown, and
-hence it would be an error.
-\end{verbatim}
-\end{tbldesc}
-\\
-\begin{Verbatim}
+\end{lstlisting}
+
+'silver' takes value 4 and 'gold' takes 5 as by default every value is
+obtained by incrementing the previous value when not specified.  'a'
+takes value 0. 'c' and 'd' both would take the value 8, and hence it
+would be an error.  When value of 'oc' is computed it is overflown,
+and hence it would be an error.
+
+\begin{lstlisting}[label=lst!literal!enum3, caption=Enum Declaration
+    Examples]
 enum bit [3:0] {bronze='h3, silver, gold='h5} medal4;
 enum bit [3:0] {bronze=4'h3, silver, gold=4'h5} medal4;
 enum bit [3:0] {bronze=5'h13, silver, gold=3'h5} medal4;
 enum bit [0:0] {a,b,c} alphabet;
-\end{Verbatim}
-\\
-\begin{tbldesc}
-\begin{verbatim}
+\end{lstlisting}
+
 Line 1: Valid. Assignment of unsized value.
 Line 2: Valid. bronze and gold sizes are redundant
 Line 3: Error in the bronze and gold member
 declarations, as size of bit-vector doesn't match
 Line 4: overflow in value, needs to be 2 bits
-\end{verbatim}
-\end{tbldesc}
-\\
-\begin{Verbatim}
+
+\begin{lstlisting}[label=lst!literal!enum4, caption=Enum Declaration
+    Examples]
 typedef enum {NO, YES} boolean;
 boolean myvar;
-\end{Verbatim}
-\\
-\begin{tbldesc}
-\begin{verbatim}
-'boolean' is an enumerated type and so it could
-be used in multiple places.
-\end{verbatim}
-\end{tbldesc}
-\\
-\begin{Verbatim}
+\end{lstlisting}
+
+'boolean' is an enumerated type and so it could be used in multiple
+places.
+
+\begin{lstlisting}[label=lst!literal!enum5, caption=Enum Declaration
+    Examples]
 typedef enum { add=10, sub[5], jmp[6:8] } E1;
-\end{Verbatim}
-\\
-\begin{tbldesc}
-\begin{verbatim}
-Following enumerated values are objtained {add=10,
-sub0=11, sub1=12, sub2=13, sub3=14, sub4=15, jmp[6]
-=16, jmp[7]=17, jmp[8]=18}
-\end{verbatim}
-\end{tbldesc}
-\\
-\begin{Verbatim}
+\end{lstlisting}
+
+Following enumerated values are objtained {add=10, sub0=11, sub1=12,
+  sub2=13, sub3=14, sub4=15, jmp[6] =16, jmp[7]=17, jmp[8]=18}
+
+\begin{lstlisting}[label=lst!literal!enum5, caption=Enum Declaration
 typedef enum {red, green, blue} Colors;
 int a;
 Colors c;
@@ -465,23 +440,13 @@ c = Colors'(1);
 a = c;
 c++;
 c+=2;
-\end{Verbatim}
-\\
-\begin{tbldesc}
-\begin{verbatim}
-In this example the assignment 'c=1' generates an error
-as it is invalid to assign a non-enumerated value to
-enumerated variable. The correct assignment is shown in
-the next line. When assigned to a int, it gets type-cast
-into int-literal automatically. They could also be used
-in expressions where corresponding literal constants
-could be used.
-Both expressions 'c++' and 'c+=2' are illegal as they
-contain assignment without type-value checking.
-\end{verbatim}
-\end{tbldesc}
+\end{lstlisting}
 
+In this example the assignment 'c=1' generates an error as it is
+invalid to assign a non-enumerated value to enumerated variable. The
+correct assignment is shown in the next line. When assigned to a int,
+it gets type-cast into int-literal automatically. They could also be
+used in expressions where corresponding literal constants could be
+used.  Both expressions 'c++' and 'c+=2' are illegal as they contain
+assignment without type-value checking.
 
-\end{tabular}
-\end{table}
-\rowcolors{1}{}{}
